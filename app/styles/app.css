@@ -1,1 +1,98 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+/* Ember supports ploain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+
+:root {
+  --bg-color: #DBF5FF;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+.page-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 96%;
+  margin: auto;
+  /* min-height: 100%; */
+}
+
+.center-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.update {
+}
+
+.title {
+  margin-top: 36%;
+  font-family: 'Lilita One';
+  font-weight: 900;
+  font-size: 2rem;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.searchbox {
+  margin-top: 10%;
+}
+
+.enquiry {
+  margin-top: 50%;
+  font-size: 0.9rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container {
+  min-width: 100%;
+  margin-top: auto;
+}
+
+.content-container {
+}
+
+.disclaimer {
+  display: flex;
+  flex-direction: column;
+}
+
+.disclaimer p {
+  font-size: 0.8rem;
+  margin: 2;
+  margin-top: 0.5rem;
+  border: 0;
+}
+
+.disclaimer h4 {
+  margin: 0;
+  margin-top: 3rem;
+  margin-bottom: 4;
+}
+
+div.container-homepage {
+  margin: 0;
+}
+
+.container-homepage {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.intro p {
+  text-align: center;
+  font-family: Roboto;
+}

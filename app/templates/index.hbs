@@ -1,21 +1,23 @@
-<section>
-  <p class="update">Update: {{@model.updatedDate}} </p>
-</section>
-<section>
-  <div>
-    <h1 class="title">Duty Calculator</h1>
-  </div>
-  <div>
-    <p class="intro">
-      for calculating the custom duty of the goods being imported into Nigeria
-    </p>
-  </div>
-  <section>
-    <Input />
+<div class="container-homepage center-display">
+  <section class="update">
+    <p > Updated On: {{@model.updatedDate}} </p>
   </section>
-  <section>
-    <p class="enquiry">
-      for enquiry, contact info@dutycalculator.ng
-    </p>
+  <section class='title-container'>
+    <div>
+      <h1 class="center-display title">Duty Calculator</h1>
+    </div>
+    <div class="intro">
+      <p>
+        for calculating the custom duty of the goods being imported into Nigeria
+      </p>
+    </div>
   </section>
-</section>
+  <section class="searchbox">
+    <div >
+      <Input />
+    </div>
+  </section>
+  <section class="enquiry">
+    <p class=center-display> for enquiry, contact info@dutycalculator.ng </p>
+  </section>
+</div>
