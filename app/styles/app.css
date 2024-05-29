@@ -56,7 +56,7 @@ body {
   font-weight: 700;
   color: var(--title-color);
   font-size: 2.2rem;
-  text-shadow: 4px 4px 4px #aaa;
+  text-shadow: 4px 4px 4px #6c6c6c;
 }
 
 .searchbox {
@@ -139,5 +139,4 @@ input[type=search] {
   font-family: var(--info);
   font-size: 0.8rem;
   color: var(--text-color);
-  /* background-color: var(--form-bg-color); */
 }
