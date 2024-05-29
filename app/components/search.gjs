@@ -11,7 +11,7 @@ export default class SearchComponent extends Component {
   @tracked query = '';
 
   @action doSearch(event) {
-    if (event.code === 'Enter') {
+    if (event.key === 'Enter') {
       this.query = event.target.value;
       this.router.transitionTo('search-result');
     }
@@ -24,7 +24,7 @@ export default class SearchComponent extends Component {
         placeholder="Type the name or tariff code then Enter"
         @type="search"
         @value={{this.query}}
-        {{on "keypress" this.doSearch}}
+        {{on "keydown" this.doSearch}}
       />
     </div>
   </template>
