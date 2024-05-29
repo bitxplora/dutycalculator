@@ -1,0 +1,14 @@
+import Controller from '@ember/conttroller';
+import { service } from '@ember/service';
+import { action } from '@ember/object';
+
+export default class IndexController extends Controller {
+  @service router;
+
+  @action
+  doSearch(event) {
+    if (event.code === 'Enter') {
+      this.router.transitionTo('search-result');
+    }
+  }
+}

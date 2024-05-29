@@ -1,0 +1,23 @@
+<div class="center-display">
+  <table class="pure-table pure-table-bordered pure-table-striped">
+    <caption>
+      Click on the most appropriate description that best matches your item
+    </caption>
+    <thead>
+      <tr>
+        <th>CET Code</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#let this.model as |results|}}
+      {{#each results as |result|}}
+      <tr>
+        <td>{{result.cet_code}}</td>
+        <td>{{result.description}}</td>
+      </tr>
+      {{/each}}
+      {{/let}}
+    </tbody>
+  </table>
+</div>
