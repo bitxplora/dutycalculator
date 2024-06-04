@@ -5,22 +5,31 @@
     </div>
     <div class="center-display">
       <table class="pure-table pure-table-horizontal">
-        <tr>
-          <td>
-            CET Code
-          </td>
-          <td>
-            {{@model.CETcode}}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Description
-          </td>
-          <td>
-            {{@model.description}}
-          </td>
-        </tr>
+        <thead>
+          <!-- <tr> -->
+          <!--   <th class="item-selected" colspan="2"> -->
+          <!--     The item you have selected -->
+          <!--   </th> -->
+          <!-- </tr> -->
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              CET Code
+            </td>
+            <td>
+              {{@model.CETcode}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Description
+            </td>
+            <td>
+              {{@model.description}}
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </section>
@@ -36,8 +45,8 @@
             0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
           />
       </svg>
-        Edit
-      </button>
+      Edit
+    </button>
     </div>
   </section>
   <section>

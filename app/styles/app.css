@@ -145,6 +145,11 @@ input[type=search] {
   margin: 0.5rem 0.5rem 2rem;
 }
 
+.item-selected {
+  text-align: center;
+  font-family: var(--info);
+  color: var(--title-color)
+}
 
 
 
