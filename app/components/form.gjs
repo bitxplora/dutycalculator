@@ -25,6 +25,8 @@ const Currency = <template>
 
       .push-left {
         margin-left: auto;
+        display: flex;
+        align-content: center;
       }
     </style>
 </template>
@@ -72,6 +74,5 @@ const Field = <template>
         margin: 0;
         width: fit-content;
       }
-
     </style>
   </template>
