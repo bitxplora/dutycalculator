@@ -141,7 +141,9 @@ input[type=search] {
   color: var(--text-color);
 }
 
-
+.edit-button {
+  margin: 0.5rem 0.5rem 2rem;
+}
 
 
 
