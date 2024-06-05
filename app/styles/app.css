@@ -152,8 +152,13 @@ input[type=search] {
   color: var(--title-color)
 }
 
+.form {
+  color: var(--title-color);
+}
 
-
+.form-subtitle {
+  color: var(--accent-color);
+}
 
 
 

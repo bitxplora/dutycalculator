@@ -57,7 +57,7 @@ const Field = <template>
 
   <template>
     <div>
-      <h4 class="center-display">Fill in the below:</h4>
+      <h5 class="center-display form-subtitle">Fill in the below</h5>
       <form class="pure-form pure-form-aligned center-display">
       <fieldset>
         <legend class="pure-form-message">For each row, select the appropriate currency and input the value.</legend>
