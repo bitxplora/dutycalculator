@@ -20,7 +20,8 @@ const Currency = <template>
       #currency-selected {
         padding: 0;
         padding-left: 0.3rem;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        min-height: 2.0rem;
       }
 
       .push-left {
