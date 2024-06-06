@@ -1,15 +1,15 @@
 <div class="center-display">
-  <table class="pure-table pure-table-bordered pure-table-striped">
+  <table class="pure-table pure-table-bordered">
     <caption>
       Double click on the most appropriate description that best matches your item
     </caption>
     <thead>
-      <tr>
+      <tr class="table-head">
         <th>CET Code</th>
         <th>Description</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class='hover-effect'>
       {{#let this.model as |results|}}
       {{#each results as |result|}}
       <tr>
