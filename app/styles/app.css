@@ -29,7 +29,7 @@ body {
   position: relative;
   background-color: var(--bg-color);
   min-height: 100vh;
-  min-width: 375px;
+  /* min-width: 375px; */
 }
 
 .page-container {
@@ -169,3 +169,32 @@ input[type=search] {
     background-color: #cfecf7;
     color: var(--title-color);
 }
+
+.form-alignment {
+  display: grid;
+  /* flex-direction: column; */
+}
+
+/* @media only screen and (min-width: 800px) { */
+/*   .form-alignment { */
+/*     margin-left: 10%; */
+/*   } */
+
+/* } */
+
+/* @media only screen and (min-width: 1100px) { */
+/*   .form-alignment { */
+/*     margin-left: 20%; */
+/*   } */
+
+/* } */
+
+.table-result {
+  font-family: Lato;
+}
+
+.form-page {
+  display: grid;
+  justify-content: center;
+}
+

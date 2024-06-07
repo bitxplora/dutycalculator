@@ -7,7 +7,7 @@ const capitalize = (transactionType) => {
 };
 
 const Currency = <template>
-    <div class="pure-u-2-24 push-left">
+    <div class="push-left">
       <label for="currency-selected"></label>
       <select id="currency-selected">
         <option>CUR</option>
@@ -24,56 +24,83 @@ const Currency = <template>
         min-height: 2.0rem;
       }
 
-      .push-left {
-        margin-left: auto;
-        display: flex;
-        align-content: center;
-      }
+      // .push-left {
+        // margin-left: auto;
+        // display: flex;
+        // justify-content: center;
+        // align-content: center;
+      // }
     </style>
 </template>
 
 const Field = <template>
-  <div class="pure-control-group form-row pure-g">
-    <label class="pure-u-2-24" for={{@transactionType}}>{{capitalize @transactionType}}?</label>
+  <div class="pure-control-group form-row">
+    <label class="" for={{@transactionType}}>{{capitalize @transactionType}}?</label>
     <Currency />
-    <input class="pure-u-14-24 input-space" type="text" id={{@transactionType}} name="" placeholder="Value" required="" />
+    <input class="input-space" type="text" id={{@transactionType}} name="" placeholder="Value" required="" />
   </div>
   <style>
-    .input-space {
-      margin: 0;
-      margin-left: 1.5rem;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    // .input-space {
+      // margin: 0;
+      // margin-left: 1.5rem;
+      // padding: 0;
+      // box-sizing: border-box;
+    // }
 
     .form-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.1rem;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 0.2rem;
+      font-family: Lato;
     }
+
+  .form-row input {
+    width: 14rem;
+  }
+
+  @media only screen and (min-width: 430px) {
+    .form-row input {
+      width: 20rem;
+    }
+  }
   </style>
 </template>
 
   <template>
-    <div>
-      <h5 class="center-display form-subtitle">Fill in the below</h5>
-      <form class="pure-form pure-form-aligned center-display">
-      <fieldset>
+    <div class="form-position">
+      <h5 class="form-subtitle">Fill the below</h5>
+      <form class="pure-form pure-form-aligned">
+      <fieldset class='field-position'>
         <legend class="pure-form-message">For each row, select the appropriate currency and input the value.</legend>
-        <Field @transactionType='fob' />
-        <Field @transactionType='freight' />
-        <Field @transactionType='insurance' />
-        <div class="center-display">
-          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        <div class="fields-group">
+          <div>
+            <Field @transactionType='fob' />
+            <Field @transactionType='freight' />
+            <Field @transactionType='insurance' />
+          </div>
+          <div>
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          </div>
         </div>
       </fieldset>
       </form>
     </div>
     <style>
       .pure-form-aligned .pure-control-group label {
-        margin: 0;
         width: fit-content;
       }
+
+      .fields-group {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+
+    .form-position {
+      margin-top: 15%;
+      display: grid;
+      justify-content: space-around;
+    }
     </style>
   </template>
