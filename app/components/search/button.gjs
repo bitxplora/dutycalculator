@@ -27,12 +27,20 @@
     }
 
     .note-message {
-      font-size: 0.8rem;
+      margin: auto;
+      font-size: 0.6rem;
     }
 
     .search-button {
       margin: 0.5rem 0rem 0rem;
       border-radius: 0.4rem;
     }
+
+  @media only screen and ( min-width: 710px ) {
+    .note-message {
+      width: 80%;
+      margin: auto;
+    }
+  }
   </style>
 </template>
