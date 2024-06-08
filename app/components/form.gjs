@@ -7,7 +7,7 @@ const capitalize = (transactionType) => {
 };
 
 const Currency = <template>
-    <div class="push-left">
+    <div class="brand-text push-left">
       <label for="currency-selected"></label>
       <select id="currency-selected">
         <option>CUR</option>
@@ -34,7 +34,7 @@ const Currency = <template>
 </template>
 
 const Field = <template>
-  <div class="pure-control-group form-row">
+  <div class="pure-control-group form-row brand-text">
     <label class="" for={{@transactionType}}>{{capitalize @transactionType}}?</label>
     <Currency />
     <input class="input-space" type="text" id={{@transactionType}} name="" placeholder="Value" required="" />
@@ -52,7 +52,7 @@ const Field = <template>
       align-items: baseline;
       justify-content: flex-end;
       gap: 0.2rem;
-      font-family: Lato;
+      // font-family: Lato;
     }
 
   .form-row input {
