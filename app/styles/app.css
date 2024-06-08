@@ -160,6 +160,11 @@ input[type=search] {
   color: var(--accent-color);
 }
 
+.brand-text {
+  font-family: var(--info);
+  color: var(--text-color);
+}
+
 .hover-effect tr:hover {
   /* background-color: #cfecf7; */
   background-color: #f2fafd;
@@ -198,3 +203,8 @@ input[type=search] {
   justify-content: center;
 }
 
+.search-result-page {
+  display: grid;
+  justify-content: center;
+  gap: 0.8rem;
+}
