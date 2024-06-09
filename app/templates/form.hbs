@@ -6,12 +6,13 @@
       <div class="">
         <table class="pure-table pure-table-horizontal table-result">
           <tbody>
+            {{#let @model.itemSelected as |item|}}
             <tr>
               <td>
                 CET Code
               </td>
               <td>
-                {{@model.CETcode}}
+                {{item.CETcode}}
               </td>
             </tr>
             <tr>
@@ -19,9 +20,10 @@
                 Description
               </td>
               <td>
-                {{@model.description}}
+                {{item.description}}
               </td>
             </tr>
+            {{/let}}
           </tbody>
         </table>
       </div>
@@ -40,7 +42,7 @@
       </button>
       </div>
     <section>
-      <Form />
+      <Form @model={{@model}} />
     </section>
   </div>
 </div>

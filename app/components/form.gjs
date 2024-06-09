@@ -9,11 +9,11 @@ const capitalize = (transactionType) => {
 const Currency = <template>
     <div class="brand-text push-left">
       <label for="currency-selected"></label>
-      <select id="currency-selected">
-        <option>CUR</option>
-        <option>NGN</option>
-        <option>USD</option>
-        <option>YEN</option>
+      <select id="currency-selected" autofocus required>
+        <option value=''>CUR</option>
+          {{#each @currencies as |currency|}}
+            <option value={{currency}}>{{currency}}</option>
+          {{/each}}
       </select>
     </div>
     <style>
@@ -36,7 +36,7 @@ const Currency = <template>
 const Field = <template>
   <div class="pure-control-group form-row brand-text">
     <label class="" for={{@transactionType}}>{{capitalize @transactionType}}?</label>
-    <Currency />
+    <Currency @currencies={{@model.currencies}} />
     <input class="input-space" type="text" id={{@transactionType}} name="" placeholder="Value" required="" />
   </div>
   <style>
@@ -75,9 +75,9 @@ const Field = <template>
         <legend class="pure-form-message">For each row, select the appropriate currency and input the value.</legend>
         <div class="fields-group">
           <div>
-            <Field @transactionType='fob' />
-            <Field @transactionType='freight' />
-            <Field @transactionType='insurance' />
+            <Field @model={{@model}} @transactionType='fob' />
+            <Field @model={{@model}} @transactionType='freight' />
+            <Field @model={{@model}} @transactionType='insurance' />
           </div>
           <div>
             <button type="submit" class="pure-button pure-button-primary">Submit</button>
