@@ -5,7 +5,7 @@ import { service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
-export default class SearchComponent extends Component {
+export default class Search extends Component {
   @service router;
 
   @tracked query = '';
