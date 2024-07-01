@@ -1,6 +1,8 @@
 <div class="container-homepage center-display">
   <section class="update">
-    <p > Updated On: {{@model.updatedDate}} </p>
+    {{!-- <p > Updated On: {{@model.updatedDate}} </p> --}}
+    {{log @model.last }}
+    <p > Updated: {{@model.last}} </p>
   </section>
   <section class='title-container'>
     <div>
@@ -16,6 +18,6 @@
     <Search />
   </section>
   <section class="enquiry">
-    <p class=center-display> for enquiry, contact info@dutycalculator.ng </p>
+    <p class=center-display> for enquiry, info@dutycalculator.ng </p>
   </section>
 </div>
