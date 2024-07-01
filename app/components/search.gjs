@@ -21,10 +21,10 @@ export default class Search extends Component {
     <div>
       <Input
         aria-label="Type the name of your item or the tariff code then press enter key"
-        placeholder="Type the name or tariff code then Enter"
+        placeholder="Type the name or tariff code"
         @type="search"
         @value={{this.query}}
-        {{on "keydown" this.doSearch}}
+        {{on "keyup" this.doSearch}}
       />
     </div>
   </template>
