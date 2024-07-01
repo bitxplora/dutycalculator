@@ -12,7 +12,7 @@ export default class Search extends Component {
 
   @action doSearch(event) {
     if (event.key === 'Enter') {
-      this.query = event.target.value;
+      if (!this.query) return false;
       this.router.transitionTo('search-result');
     }
   }
