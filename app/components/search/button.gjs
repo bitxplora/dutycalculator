@@ -2,8 +2,7 @@
   <div class='button-component'>
     <div>
       <p class='note-message'>
-        <b>Note:</b> If you have exhausted the search result without finding what best describes your item,
-        click the below button to do a new search and refine your search term.
+        <b>Note:</b> If you have exhausted the search result without finding what best describes your item. You can enhance your search with <b>AND</b>, <b>OR</b> and <b>NOT</b>. Click the below button to do a new search and refine your search term.
       </p>
     </div>
     <div class='center-display'>
@@ -28,7 +27,7 @@
 
     .note-message {
       margin: auto;
-      font-size: 0.6rem;
+      font-size: 0.9rem;
     }
 
     .search-button {
