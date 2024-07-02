@@ -4,8 +4,8 @@ import { service } from '@ember/service';
 export default class SearchResultRoute extends Route {
   @service('db') db;
 
-  async model() {
-    const searchResult = await this.db.search();
+  model() {
+    const searchResult = this.db.search();
     return searchResult;
   }
 }
