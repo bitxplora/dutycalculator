@@ -23,3 +23,6 @@
 
 # broccoli-debug
 /DEBUG/
+app/components/search/result.original
+app/routes/search-result.old
+app/routes/search-result.original
