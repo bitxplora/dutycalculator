@@ -11,10 +11,11 @@
         </tr>
       </thead>
       <tbody class='hover-effect brand-text'>
+        {{log @searchResult}}
         {{#let @searchResult as |results|}}
         {{#each results as |result|}}
         <tr>
-          <td>{{result.cet_code}}</td>
+          <td>{{result.cetcode}}</td>
           <td>{{result.description}}</td>
         </tr>
         {{/each}}
@@ -34,3 +35,4 @@
   }
   </style>
 </template>
+
