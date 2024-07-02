@@ -12,11 +12,9 @@ export default class DB extends Service {
   }
 
   async search() {
-    const response = await fetch(`${this.server}ngn/items/${this.searchItem}`);
-    this.searchedItems = await response.json();
-  }
+    const response = await fetch(`${this.server}/ngn/items/${this.searchItem}`);
+    const result = await response.json();
 
-  get searchResult() {
-    return this.searchedItems;
+    return result;
   }
 }
