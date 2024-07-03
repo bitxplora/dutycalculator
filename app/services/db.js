@@ -11,15 +11,15 @@ export default class DB extends Service {
     this.searchItem = item;
   }
 
-  set cetcodeSelected(cetcode) {
+  cetcodeSelected(cetcode) {
     this.#selected['cetcode'] = cetcode;
   }
 
-  set descriptionSelected(description) {
+  descriptionSelected(description) {
     this.#selected['description'] = description;
   }
 
-  get selected() {
+  selected() {
     return this.#selected;
   }
 
