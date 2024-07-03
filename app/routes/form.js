@@ -1,14 +1,13 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
 import { hash } from 'rsvp';
 
 export default class FormRoute extends Route {
+  @service db;
+
   model() {
     return hash({
-      itemSelected: {
-        CETcode: 750720000,
-        description:
-          'This works, but there is a more ergonomic way to do this: grid areas.',
-      },
+      itemSelected: this.db.selected(),
       currencies: [
         'AED',
         'AUD',
