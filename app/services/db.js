@@ -1,16 +1,24 @@
 import Service from '@ember/service';
 
 export default class DB extends Service {
-  searchItem;
-
-  searchedItems;
-
   server = 'https://10.35.51.85:5000';
 
   country = 'ngn';
 
+  searchedItems;
+
+  selected = {};
+
   addSearchItem(item) {
     this.searchItem = item;
+  }
+
+  addCetCodeSelected(cetcodeSelected) {
+    this.selected['cetcode'] = cetcodeSelected;
+  }
+
+  addDescriptionSelected(descriptionSelected) {
+    this.selected['description'] = descriptionSelected;
   }
 
   async search() {
