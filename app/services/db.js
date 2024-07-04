@@ -15,7 +15,7 @@ export default class DB extends Service {
     this.#selected['cetcode'] = cetcode;
   }
 
-  adddDiscriptionSelected(description) {
+  addDescriptionSelected(description) {
     this.#selected['description'] = description;
   }
 
