@@ -13,8 +13,8 @@ export default class SearchResult extends Component {
     if (!rowTag) return false;
     const cetcodeSelected = rowTag.firstElementChild.innerText;
     const descriptionSelected = rowTag.lastElementChild.innerText;
-    this.db.cetcodeSelected(cetcodeSelected);
-    this.db.descriptionSelected(descriptionSelected);
+    this.db.addCetcodeSelected(cetcodeSelected);
+    this.db.addDescriptionSelected(descriptionSelected);
     this.router.transitionTo('form');
   }
 
