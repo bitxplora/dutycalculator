@@ -10,7 +10,7 @@ const Currency = <template>
     <div class="brand-text">
       <label for="currency-selected"></label>
       <select id="currency-selected" autofocus required>
-        <option value=''>CUR</option>
+        <option value='CUR' selected>CUR</option>
           {{#each @currencies as |currency|}}
             <option id={{currency}} name={{currency}} value={{currency}}>{{currency}}</option>
           {{/each}}
@@ -37,7 +37,7 @@ const Field = <template>
   <div class="pure-control-group form-row brand-text">
     <label class="" for={{@transactionType}}>{{capitalize @transactionType}}?</label>
     <Currency @currencies={{@model.currencies}} />
-    <input type="text" id={{@transactionType}} name="" placeholder="Value" required />
+    <input type="number" id={{@transactionType}} name={{@transactionType}} placeholder="Type the value" required />
   </div>
   <style>
     // .input-space {
