@@ -1,21 +1,21 @@
 import Service from '@ember/service';
 
 export default class DB extends Service {
-  server = 'https://10.35.51.85:5000';
-  country = 'ngn';
+  #server = 'https://10.35.51.85:5000';
+  #country = 'ngn';
 
-  searchedItems;
+  #searchItem;
   #selected = {};
 
   addSearchItem(item) {
-    this.searchItem = item;
+    this.#searchItem = item;
   }
 
-  cetcodeSelected(cetcode) {
+  addCetcodeSelected(cetcode) {
     this.#selected['cetcode'] = cetcode;
   }
 
-  descriptionSelected(description) {
+  adddDiscriptionSelected(description) {
     this.#selected['description'] = description;
   }
 
@@ -25,7 +25,7 @@ export default class DB extends Service {
 
   async search() {
     const response = await fetch(`
-      ${this.server}/${this.country}/items/${this.searchItem}
+      ${this.#server}/${this.#country}/items/${this.#searchItem}
       `);
     const result = await response.json();
 
