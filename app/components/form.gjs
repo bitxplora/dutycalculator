@@ -10,7 +10,7 @@ const Currency = <template>
     <div class="brand-text">
       <label for="currency-selected"></label>
       <select id="currency-selected" autofocus required>
-        <option value='CUR' selected>CUR</option>
+        <option value=''>CUR</option>
           {{#each @currencies as |currency|}}
             <option id={{currency}} name={{currency}} value={{currency}}>{{currency}}</option>
           {{/each}}
@@ -23,13 +23,6 @@ const Currency = <template>
         font-size: 0.7rem;
         min-height: 2.0rem;
       }
-
-      // .push-left {
-        // margin-left: auto;
-        // display: flex;
-        // justify-content: center;
-        // align-content: center;
-      // }
     </style>
 </template>
 
@@ -40,13 +33,6 @@ const Field = <template>
     <input type="number" id={{@transactionType}} name={{@transactionType}} placeholder="Type the value" required />
   </div>
   <style>
-    // .input-space {
-      // margin: 0;
-      // margin-left: 1.5rem;
-      // padding: 0;
-      // box-sizing: border-box;
-    // }
-
     .form-row {
       display: flex;
       align-items: baseline;
