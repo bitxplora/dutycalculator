@@ -20,7 +20,7 @@ export default class DB extends Service {
     this.#selected['description'] = description;
   }
 
-  addformData(data) {
+  addFormData(data) {
     Object.assign(this.#formData, data);
   }
 
