@@ -24,7 +24,7 @@ export default class DB extends Service {
     Object.assign(this.#formData, data);
   }
 
-  selected() {
+  getSelected() {
     return this.#selected;
   }
 
