@@ -7,7 +7,7 @@ export default class FormRoute extends Route {
 
   model() {
     return hash({
-      itemSelected: this.db.selected(),
+      itemSelected: this.db.getSelected(),
       currencies: [
         'AED',
         'AUD',
