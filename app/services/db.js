@@ -6,6 +6,7 @@ export default class DB extends Service {
 
   #searchItem;
   #selected = {};
+  #formData = {};
 
   addSearchItem(item) {
     this.#searchItem = item;
@@ -19,8 +20,16 @@ export default class DB extends Service {
     this.#selected['description'] = description;
   }
 
+  addformData(data) {
+    Object.assign(this.#formData, data);
+  }
+
   selected() {
     return this.#selected;
+  }
+
+  getFormData() {
+    return this.#formData;
   }
 
   async search() {
