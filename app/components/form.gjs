@@ -1,3 +1,5 @@
+import { concat } from '@ember/helper';
+
 const capitalize = (transactionType) => {
   if (transactionType.toLowerCase() === 'fob') {
     return transactionType.toUpperCase();
@@ -8,8 +10,8 @@ const capitalize = (transactionType) => {
 
 const Currency = <template>
     <div class="brand-text">
-      <label for="currency-selected"></label>
-      <select id="currency-selected" autofocus required>
+      <label for={{( concat @transactionType "-currency-selected") }}></label>
+      <select id={{( concat @transactionType "-currency-selected") }} class="currency-selected" autofocus required>
         <option value=''>CUR</option>
           {{#each @currencies as |currency|}}
             <option id={{currency}} name={{currency}} value={{currency}}>{{currency}}</option>
@@ -17,7 +19,7 @@ const Currency = <template>
       </select>
     </div>
     <style>
-      #currency-selected {
+      .currency-selected {
         padding: 0;
         padding-left: 0.3rem;
         font-size: 0.7rem;
@@ -28,9 +30,9 @@ const Currency = <template>
 
 const Field = <template>
   <div class="pure-control-group form-row brand-text">
-    <label class="" for={{@transactionType}}>{{capitalize @transactionType}}?</label>
-    <Currency @currencies={{@model.currencies}} />
-    <input type="number" id={{@transactionType}} name={{@transactionType}} placeholder="Type the value" required />
+    <label class="" for={{( concat @transactionType "Field")}}>{{capitalize @transactionType}}?</label>
+    <Currency @currencies={{@model.currencies}} @transactionType={{@transactionType}} />
+    <input type="number" id={{( concat @transactionType "Field")}} name={{( concat @transactionType "Field")}} placeholder="Type the value" required />
   </div>
   <style>
     .form-row {
@@ -56,7 +58,7 @@ const Field = <template>
   <template>
     <div class="form-position">
       <h5 class="form-subtitle">Fill the below</h5>
-      <form class="pure-form pure-form-aligned">
+      <form id="dutyform" name="dutyform" class="pure-form pure-form-aligned">
       <fieldset class='field-position'>
         <legend class="pure-form-message">For each row, select the appropriate currency and input the value.</legend>
         <div class="fields-group">
@@ -83,10 +85,10 @@ const Field = <template>
         align-items: start;
       }
 
-    .form-position {
-      margin-top: 15%;
-      display: grid;
-      justify-content: space-around;
-    }
+      .form-position {
+        margin-top: 15%;
+        display: grid;
+        justify-content: space-around;
+      }
     </style>
   </template>
