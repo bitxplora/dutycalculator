@@ -10,8 +10,8 @@ const capitalize = (transactionType) => {
 
 const Currency = <template>
     <div class="brand-text">
-      <label for={{( concat @transactionType "-currency-selected") }}></label>
-      <select id={{( concat @transactionType "-currency-selected") }} class="currency-selected" autofocus required>
+      <label for={{( concat @transactionType "Currency") }}></label>
+      <select id={{( concat @transactionType "Currency") }} name={{( concat @transactionType "Currency") }} class="currency-selected" autofocus required>
         <option value=''>CUR</option>
           {{#each @currencies as |currency|}}
             <option id={{currency}} name={{currency}} value={{currency}}>{{currency}}</option>
