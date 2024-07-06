@@ -83,7 +83,14 @@ export default class Estimate extends Component {
   }
 
   get preVatTotal() {
-    return this.ciss + this.surface + this.etls + this.surcharge + this.levy;
+    return (
+      this.cif +
+      this.ciss +
+      this.surface +
+      this.etls +
+      this.surcharge +
+      this.levy
+    );
   }
 
   get vat() {
@@ -91,7 +98,14 @@ export default class Estimate extends Component {
   }
 
   get total() {
-    return this.preVatTotal + this.vat;
+    return (
+      this.ciss +
+      this.surface +
+      this.etls +
+      this.surcharge +
+      this.levy +
+      this.vat
+    );
   }
 
   @action
