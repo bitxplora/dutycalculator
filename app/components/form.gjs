@@ -9,12 +9,12 @@ export default class Form extends Component {
   @service router;
 
   @action
-  doSave(event) {
+  async doSave(event) {
     event.preventDefault();
     let form = document.getElementById('dutyform');
     let formData = new FormData(form);
     let data = Object.fromEntries(formData.entries());
-    this.db.addFormData(data);
+    await this.db.addFormData(data);
     this.router.transitionTo('duty');
   }
 
