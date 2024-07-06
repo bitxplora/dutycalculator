@@ -9,12 +9,17 @@ export default class Estimate extends Component {
   #cumstomData;
 
   #formatter;
+  #options = {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  };
 
   constructor() {
     super(...arguments);
     this.#suppliedData = this.db.getFormData();
     this.#cumstomData = this.db.getSelected();
-    this.#formatter = new Intl.NumberFormat('en-US');
+    this.#formatter = new Intl.NumberFormat('en-US', this.#options);
   }
 
   get fob() {
@@ -97,7 +102,7 @@ export default class Estimate extends Component {
 
   <template>
     <div>
-      <table class='pure-table pure-table-bordered brand-text'>
+      <table class='pure-table pure-table-bordered brand-text dutyResult'>
         <tr>
           <td>CISS</td>
           <td>{{this.numberFormatter this.ciss}}</td>
@@ -128,5 +133,20 @@ export default class Estimate extends Component {
         </tr>
       </table>
     </div>
+    <style>
+      .dutyResult tr td:last-child {
+        text-align: right;
+        min-width: 15rem;
+      }
+
+      .dutyResult tr:last-child {
+        text-align: right;
+      }
+
+      .dutyResult tr:nth-last-child(even) {
+        background-color: white;
+      }
+
+    </style>
   </template>
 }
