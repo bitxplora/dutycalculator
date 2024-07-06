@@ -12,13 +12,13 @@ export default class DB extends Service {
     this.#searchItem = item;
   }
 
-  addCetcodeSelected(cetcode) {
-    this.#selected['cetcode'] = cetcode;
-  }
+  // addCetcodeSelected(cetcode) {
+  //   this.#selected['cetcode'] = cetcode;
+  // }
 
-  addDescriptionSelected(description) {
-    this.#selected['description'] = description;
-  }
+  // addDescriptionSelected(description) {
+  //   this.#selected['description'] = description;
+  // }
 
   addFormData(data) {
     Object.assign(this.#formData, data);
@@ -39,5 +39,14 @@ export default class DB extends Service {
     const result = await response.json();
 
     return result;
+  }
+
+  async addCetcodeSelected(cetcode) {
+    const response = await fetch(`
+      ${this.#server}/${this.#country}/items/${cetcode}
+      `);
+    const result = await response.json();
+
+    Object.assign(this.#selected, result[0]);
   }
 }
