@@ -8,13 +8,11 @@ export default class SearchResult extends Component {
   @service router;
 
   @action
-  doSelected(event) {
+  async doSelected(event) {
     const rowTag = event.target.closest('tr');
     if (!rowTag) return false;
     const cetcodeSelected = rowTag.firstElementChild.innerText;
-    const descriptionSelected = rowTag.lastElementChild.innerText;
-    this.db.addCetcodeSelected(cetcodeSelected);
-    this.db.addDescriptionSelected(descriptionSelected);
+    await this.db.addCetcodeSelected(cetcodeSelected);
     this.router.transitionTo('form');
   }
 
