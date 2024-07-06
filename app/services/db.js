@@ -12,14 +12,6 @@ export default class DB extends Service {
     this.#searchItem = item;
   }
 
-  // addCetcodeSelected(cetcode) {
-  //   this.#selected['cetcode'] = cetcode;
-  // }
-
-  // addDescriptionSelected(description) {
-  //   this.#selected['description'] = description;
-  // }
-
   addFormData(data) {
     Object.assign(this.#formData, data);
   }
