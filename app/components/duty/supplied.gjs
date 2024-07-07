@@ -15,7 +15,7 @@ export default class Supplied extends Component {
   }
 
   <template>
-    <table class='pure-table pure-table-bordered brand-text'>
+    <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
         <td>CET Code</td>
         <td>{{this.selectedItem.cetcode}}</td>
@@ -37,5 +37,10 @@ export default class Supplied extends Component {
         <td>{{this.selectedItem.description}}</td>
       </tr>
     </table>
+    <style>
+      .dutySupplied tr:nth-child(-n + 4) {
+        text-align: center;
+      }
+    </style>
   </template>
 }
