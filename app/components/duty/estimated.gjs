@@ -149,18 +149,18 @@ export default class Estimate extends Component {
     </div>
     <style>
       .dutyResult tr td:last-child {
-        text-align: right;
+        text-align: center;
         min-width: 15rem;
       }
 
       .dutyResult tr:last-child {
-        text-align: right;
+        // text-align: right;
+        font-weight: 800;
       }
 
-      .dutyResult tr:nth-last-child(even) {
+      .dutyResult tr:nth-last-child(odd) {
         background-color: white;
       }
-
     </style>
   </template>
 }
