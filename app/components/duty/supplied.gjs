@@ -38,7 +38,7 @@ export default class Supplied extends Component {
       </tr>
     </table>
     <style>
-      .dutySupplied tr:nth-child(-n + 4) {
+      .dutySupplied tr td:nth-child(-n + 4):last-child {
         text-align: center;
       }
     </style>
