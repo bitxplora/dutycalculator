@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
+import numFormatter from '../../helpers/numFormatter.js';
 
 export default class Supplied extends Component {
   @service db;
@@ -21,15 +22,15 @@ export default class Supplied extends Component {
       </tr>
       <tr>
         <td>FOB</td>
-        <td>{{this.formData.fobField}}</td>
+        <td>{{numFormatter this.formData.fobField}}</td>
       </tr>
       <tr>
         <td>Freight</td>
-        <td>{{this.formData.freightField}}</td>
+        <td>{{numFormatter this.formData.freightField}}</td>
       </tr>
       <tr>
         <td>Insurance</td>
-        <td>{{this.formData.insuranceField}}</td>
+        <td>{{numFormatter this.formData.insuranceField}}</td>
       </tr>
       <tr>
         <td>Discription</td>
