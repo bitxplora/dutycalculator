@@ -136,11 +136,10 @@ export default class Estimate extends Component {
     <style>
       .dutyEstimated tr td:last-child {
         text-align: center;
-        min-width: 15rem;
+        min-width: 12rem;
       }
 
       .dutyEstimated tr:last-child {
-        // text-align: right;
         font-weight: 800;
       }
 
