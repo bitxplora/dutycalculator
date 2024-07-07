@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
-import { action } from '@ember/object';
+import numFormatter from '../../helpers/numFormatter';
 
 export default class Estimate extends Component {
   @service db;
@@ -8,18 +8,10 @@ export default class Estimate extends Component {
   #suppliedData;
   #cumstomData;
 
-  #formatter;
-  #options = {
-    style: 'decimal',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  };
-
   constructor() {
     super(...arguments);
     this.#suppliedData = this.db.getFormData();
     this.#cumstomData = this.db.getSelected();
-    this.#formatter = new Intl.NumberFormat('en-US', this.#options);
   }
 
   get fob() {
@@ -108,42 +100,36 @@ export default class Estimate extends Component {
     );
   }
 
-  @action
-  numberFormatter(numberValue) {
-    const result = this.#formatter.format(numberValue);
-    return result;
-  }
-
   <template>
     <div>
       <table class='pure-table pure-table-bordered brand-text dutyResult'>
         <tr>
           <td>CISS</td>
-          <td>{{this.numberFormatter this.ciss}}</td>
+          <td>{{numFormatter this.ciss}}</td>
         </tr>
         <tr>
           <td>Surface Duty</td>
-          <td>{{this.numberFormatter this.surface}}</td>
+          <td>{{numFormatter this.surface}}</td>
         </tr>
         <tr>
           <td>ETLS</td>
-          <td>{{this.numberFormatter this.etls}}</td>
+          <td>{{numFormatter this.etls}}</td>
         </tr>
         <tr>
           <td>Surcharge</td>
-          <td>{{this.numberFormatter this.surcharge}}</td>
+          <td>{{numFormatter this.surcharge}}</td>
         </tr>
         <tr>
           <td>Levy</td>
-          <td>{{this.numberFormatter this.levy}}</td>
+          <td>{{numFormatter this.levy}}</td>
         </tr>
         <tr>
           <td>VAT</td>
-          <td>{{this.numberFormatter this.vat}}</td>
+          <td>{{numFormatter this.vat}}</td>
         </tr>
         <tr>
           <td>Total</td>
-          <td>{{this.numberFormatter this.total}}</td>
+          <td>{{numFormatter this.total}}</td>
         </tr>
       </table>
     </div>
