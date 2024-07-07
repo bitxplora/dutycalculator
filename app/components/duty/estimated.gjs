@@ -102,7 +102,7 @@ export default class Estimate extends Component {
 
   <template>
     <div>
-      <table class='pure-table pure-table-bordered brand-text dutyResult'>
+      <table class='pure-table pure-table-bordered brand-text dutyEstimated'>
         <tr>
           <td>CISS</td>
           <td>{{numFormatter this.ciss}}</td>
@@ -134,17 +134,17 @@ export default class Estimate extends Component {
       </table>
     </div>
     <style>
-      .dutyResult tr td:last-child {
+      .dutyEstimated tr td:last-child {
         text-align: center;
         min-width: 15rem;
       }
 
-      .dutyResult tr:last-child {
+      .dutyEstimated tr:last-child {
         // text-align: right;
         font-weight: 800;
       }
 
-      .dutyResult tr:nth-last-child(odd) {
+      .dutyEstimated tr:nth-last-child(odd) {
         background-color: white;
       }
     </style>
