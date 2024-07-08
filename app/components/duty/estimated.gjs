@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
+import valueFromStr from '../../helpers/valueFromStr.js';
 import numFormatter from '../../helpers/numFormatter';
 
 export default class Estimate extends Component {
@@ -14,19 +15,24 @@ export default class Estimate extends Component {
     this.#cumstomData = this.db.getSelected();
   }
 
+  valueFromStr(numberStr) {
+    return numberStr.replace(/,/g, '');
+  }
+
   get fob() {
-    const fob = Number(this.#suppliedData.fobField);
+    const fob = Number(valueFromStr(this.#suppliedData.fobField));
     return fob;
   }
 
   get freight() {
-    const freight = Number(this.#suppliedData.freightField);
+    const freight = Number(valueFromStr(this.#suppliedData.freightField));
     return freight;
   }
 
   get insurance() {
-    const insurance = Number(this.#suppliedData.insuranceField);
-    return insurance;
+    let insurance = this.#suppliedData.insuranceField;
+    insurance = valueFromStr(insurance);
+    return Number(insurance);
   }
 
   get vatRate() {
