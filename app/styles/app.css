@@ -6,7 +6,7 @@
   --text-box-text-color: #003E57;
   --text-box-border-color: #003E57;
   --text-bg-color: #F2FAFD;
-  --text-color: #00161F;
+  --text-color: #0b3242; /* #00161F;i */
   --title-color: #006994;
   --button-text-color: #1613AC;
   --form-bg-color: #F2FAFD;
@@ -67,9 +67,9 @@ body {
 
 .enquiry {
   margin-top: 70%;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   font-family: var(--info);
-  color: var(--text-color);
+  color: #0b3242;
 }
 
 .page-container {
@@ -92,10 +92,11 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--info);
+  margin-bottom: 1rem;
 }
 
 .disclaimer p {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   color: var(--text-color);
   margin: 2;
   margin-top: 0.5rem;
@@ -129,8 +130,8 @@ div.container-homepage {
 }
 
 input {
-  width: 20rem;
-  height: 2.0rem;
+  width: 21rem;
+  height: 2.2rem;
   border-radius: 0.4rem;
   border-color: var(--title-color);
   text-align: center;
@@ -138,7 +139,7 @@ input {
 
 input[type=search] {
   font-family: var(--info);
-  font-size: 0.8rem;
+  font-size: 1.0rem;
   color: var(--text-color);
 }
 
@@ -208,3 +209,9 @@ input[type=search] {
   justify-content: center;
   gap: 0.8rem;
 }
+
+.tippy-box[data-theme~='tippyTheme'] {
+  background-color: #0b3242;
+  /* animation-name: rubberBand; */
+}
+
