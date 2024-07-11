@@ -26,3 +26,5 @@
 app/components/search/result.original
 app/routes/search-result.old
 app/routes/search-result.original
+app/components/disclaimer.original
+app/components/form-utils.original
