@@ -1,9 +1,19 @@
 import { concat } from '@ember/helper';
+import tippyTip from '../modifiers/tippyTip';
+
+const tooltip = (transactionType) => {
+  if (transactionType === 'fob') transactionType = 'FOB';
+  return `Select the currency in which the ${transactionType} is denominated`;
+};
 
 <template>
-    <div class="brand-text">
+    <div class="brand-text" >
       <label for={{( concat @transactionType "Currency") }}></label>
-      <select id={{( concat @transactionType "Currency") }} name={{( concat @transactionType "Currency") }} class="currency-selected" autofocus="" required="">
+      <select
+        id={{( concat @transactionType "Currency") }}
+        name={{( concat @transactionType "Currency") }}
+        class="currency-selected" autofocus="" required=""
+        {{tippyTip 'mouseenter' 'top' (tooltip @transactionType)}}>
         <option value=''>CUR</option>
           {{#each @currencies as |currency|}}
             <option id={{currency}} name={{currency}} value={{currency}}>{{currency}}</option>
