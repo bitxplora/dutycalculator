@@ -2,8 +2,17 @@ import Component from '@glimmer/component';
 import { concat } from '@ember/helper';
 import { on } from '@ember/modifier';
 import Currency from './currency';
+import tippyTip from '../modifiers/tippyTip';
+import { fn } from '@ember/helper';
 
 export default class Field extends Component {
+  messages = {
+    fob: 'FOB means Free On Board. The value of the goods at origin port',
+    freight:
+      'The cost of shipping from the origin port to the destination port',
+    insurance: 'The cost of insurance for the goods',
+  };
+
   capitalize(transactionType) {
     if (transactionType.toLowerCase() === 'fob') {
       return transactionType.toUpperCase();
@@ -11,6 +20,16 @@ export default class Field extends Component {
       return `${transactionType[0].toUpperCase()}${transactionType.slice(1)}`;
     }
   }
+
+  tooltipMessage = (transactionType) => {
+    if (transactionType === 'fob') {
+      return this.messages.fob;
+    } else if (transactionType == 'freight') {
+      return this.messages.freight;
+    } else if (transactionType === 'insurance') {
+      return this.messages.insurance;
+    }
+  };
 
   doFormat(event) {
     let userValue = event.target.value;
@@ -33,7 +52,14 @@ export default class Field extends Component {
 
   <template>
     <div class="pure-control-group form-row brand-text" >
-      <label class="" for={{( concat @transactionType "Field")}}>{{this.capitalize @transactionType}}?</label>
+      {{#let (fn this.tooltipMessage @transactionType) as |message|}}
+        <label
+          for={{( concat @transactionType "Field")}}
+          {{tippyTip 'mouseenter' 'right' message }}
+          >
+          {{this.capitalize @transactionType}}?
+        </label>
+      {{/let}}
       <Currency @currencies={{@model.currencies}} @transactionType={{@transactionType}} />
       <div {{on 'input' this.doFormat}}>
         <input type="text" id={{( concat @transactionType "Field")}} name={{( concat @transactionType "Field")}} placeholder="Type the value" required />
