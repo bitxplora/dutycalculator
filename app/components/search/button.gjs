@@ -33,7 +33,7 @@ import { LinkTo } from '@ember/routing';
 
     .note-message {
       margin: auto;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
 
     .search-button {
