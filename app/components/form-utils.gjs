@@ -43,8 +43,8 @@ export default class Field extends Component {
     // Format the integer part with commas
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, `,`);
     // Remove leading zero
-    parts[0] = parts[0].replace(/^0+(?!\.)/, '');
-    // parts[0] = parts[0].replace(/^0+/, '');
+    // parts[0] = parts[0].replace(/^0+(?!\.)/, '');
+    parts[0] = parts[0].replace(/^(0{1,})(?=\d)||^(0)(?=\.)/g, '');
     //
     // Rejoin the integer and decimal, and re-assign to evet.target.value
     event.target.value = parts.join('.');
