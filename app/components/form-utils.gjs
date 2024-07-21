@@ -42,12 +42,17 @@ export default class Field extends Component {
     //
     // Format the integer part with commas
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, `,`);
+    //
     // Remove leading zero
     // parts[0] = parts[0].replace(/^0+(?!\.)/, '');
-    parts[0] = parts[0].replace(/^(0{1,})(?=\d)||^(0)(?=\.)/g, '');
+    parts[0] = parts[0].replace(/^(0{1,})(?=\d)|^(0)(?=\.)/g, '');
     //
     // Rejoin the integer and decimal, and re-assign to evet.target.value
-    event.target.value = parts.join('.');
+    if (parts[1] === undefined) {
+      event.target.value = parts[0];
+    } else {
+      event.target.value = parts[0].concat('.', parts[1]);
+    }
   }
 
   <template>
