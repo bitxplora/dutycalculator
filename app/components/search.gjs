@@ -24,7 +24,9 @@ export default class Search extends Component {
     <div>
       <Input
         aria-label="Type the name of your item or the tariff code then press enter key"
-        placeholder="Type the name or tariff code"
+        placeholder="search e.g. pipe or 7507200000"
+        required="true"
+        aria-required="true"
         @type="search"
         @value={{this.query}}
         {{on "keyup" this.doSearch}}
