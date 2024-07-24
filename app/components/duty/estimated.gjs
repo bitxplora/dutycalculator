@@ -28,15 +28,15 @@ export default class Estimate extends Component {
   }
 
   get fob() {
-    const fobField = Number(valueFromStr(this.#suppliedData.fobField));
-    const fobCurrency = this.#suppliedData.fobCurrency;
-    const fobCurrencyRate = this.currenciesRatesObj[fobCurrency];
-    return fobField * fobCurrencyRate;
+    const fobValue = this.db.getFob();
+    return fobValue;
   }
 
   get freight() {
     const freight = Number(valueFromStr(this.#suppliedData.freightField));
-    return freight;
+    const freightCurrency = this.#suppliedData.freightCurrency;
+    const freightCurrencyRate = this.currenciesRatesObj[freightCurrency];
+    return freight * freightCurrencyRate;
   }
 
   get insurance() {
