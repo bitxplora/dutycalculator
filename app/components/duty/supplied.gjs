@@ -16,11 +16,8 @@ export default class Supplied extends Component {
   }
 
   get fob() {
-    const fobField = Number(valueFromStr(this.formData.fobField));
-    const fobCurrency = this.formData.fobCurrency;
-    const currenciesRatesObj = this.db.getCurrenciesRatesObj();
-    const fobCurrencyRate = Number(currenciesRatesObj[fobCurrency]);
-    return fobField * fobCurrencyRate;
+    const fobValue = this.db.getFob();
+    return fobValue;
   }
 
   <template>
