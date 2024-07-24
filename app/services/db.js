@@ -1,4 +1,5 @@
 import Service from '@ember/service';
+import valueFromStr from '../helpers/valueFromStr';
 // import { hash } from 'rsvp';
 
 export default class DB extends Service {
@@ -10,6 +11,9 @@ export default class DB extends Service {
   #selected = {};
   formData = {};
   currenciesRatesObj = {};
+  fob;
+  freight;
+  insurance;
 
   addSearchItem(item) {
     this.#searchItem = item;
@@ -89,5 +93,12 @@ export default class DB extends Service {
     const result = await response.json();
 
     Object.assign(this.#selected, result[0]);
+  }
+
+  getFob() {
+    const fobRaw = Number(valueFromStr(this.formData.fobField));
+    const fobCurrencyCode = this.formData.fobCurrency;
+    const fobCurrencyRate = this.currenciesRatesObj[fobCurrencyCode];
+    return fobRaw * fobCurrencyRate;
   }
 }
