@@ -15,6 +15,8 @@ export default class Form extends Component {
     let formData = new FormData(form);
     let data = Object.fromEntries(formData.entries());
     await this.db.addFormData(data);
+    await this.db.setCurrenciesAndRates();
+    await this.db.setCurrenciesRatesObj();
     this.router.transitionTo('duty');
   }
 
