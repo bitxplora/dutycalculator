@@ -24,7 +24,7 @@ export default class Search extends Component {
     <div>
       <Input
         aria-label="Type the name of your item or the tariff code then press enter key"
-        placeholder="search e.g. pipe or 7507200000"
+        placeholder="Search e.g. pipe or 7507200000"
         required="true"
         aria-required="true"
         @type="search"
