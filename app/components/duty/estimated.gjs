@@ -8,16 +8,45 @@ export default class Estimate extends Component {
 
   #suppliedData;
   #cumstomData;
+  currencies;
+  currenciesRatesObj;
 
   constructor() {
     super(...arguments);
     this.#suppliedData = this.db.getFormData();
     this.#cumstomData = this.db.getSelected();
+    this.currencies = this.db.getCurrenciesAndRates();
+    this.currenciesRatesObj = this.db.getCurrenciesRatesObj();
   }
 
   valueFromStr(numberStr) {
     return numberStr.replace(/,/g, '');
   }
+
+  numberOfCurrencies() {
+    if (this.currencies.length > 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // get currenciesRates() {
+  //   const currenciesRatesObj = {};
+  //   // const currenciesAndRates = this.currenciesAndRates;
+  //   const currenciesAndRates = this.currencies;
+  //   for (let entry of currenciesAndRates) {
+  //     let code = entry['code'];
+  //     let rate = entry['rate'];
+  //     currenciesRatesObj[code] = rate;
+  //   }
+  //   // console.log(currenciesRatesObj);
+  //   return currenciesRatesObj;
+  // }
+
+  // get currenciesRatesObj() {
+  //   return this.currenciesRatesObj;
+  // }
 
   get fob() {
     const fob = Number(valueFromStr(this.#suppliedData.fobField));
@@ -106,6 +135,14 @@ export default class Estimate extends Component {
     );
   }
 
+  get currenciesAndRates() {
+    return this.currencies;
+  }
+
+  get currencyList() {
+    return Object.keys(this.currenciesRatesObj).join();
+  }
+
   <template>
     <div>
       <table class='pure-table pure-table-bordered brand-text dutyEstimated'>
@@ -138,6 +175,15 @@ export default class Estimate extends Component {
           <td>{{numFormatter this.total}}</td>
         </tr>
       </table>
+    </div>
+    <div>
+      <p><b>Note:</b> The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}} to Naira {{if this.numberOfCurrencies "are" "is"}} obtained from NCS's website. The {{if this.numberOfCurrencies "rates" "rate"}} {{if this.numberOfCurrencies "are" "is"}} as follows:
+      </p>
+      <ul>
+      {{#each this.currencies as |currency|}}
+        <li> {{currency.code}}1 to NGN{{currency.rate}}</li>
+      {{/each}}
+      </ul>
     </div>
     <style>
       .dutyEstimated tr td:last-child {
