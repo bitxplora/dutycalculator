@@ -31,23 +31,6 @@ export default class Estimate extends Component {
     }
   }
 
-  // get currenciesRates() {
-  //   const currenciesRatesObj = {};
-  //   // const currenciesAndRates = this.currenciesAndRates;
-  //   const currenciesAndRates = this.currencies;
-  //   for (let entry of currenciesAndRates) {
-  //     let code = entry['code'];
-  //     let rate = entry['rate'];
-  //     currenciesRatesObj[code] = rate;
-  //   }
-  //   // console.log(currenciesRatesObj);
-  //   return currenciesRatesObj;
-  // }
-
-  // get currenciesRatesObj() {
-  //   return this.currenciesRatesObj;
-  // }
-
   get fob() {
     const fob = Number(valueFromStr(this.#suppliedData.fobField));
     return fob;
@@ -177,7 +160,9 @@ export default class Estimate extends Component {
       </table>
     </div>
     <div>
-      <p><b>Note:</b> The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}} to Naira {{if this.numberOfCurrencies "are" "is"}} obtained from NCS's website. The {{if this.numberOfCurrencies "rates" "rate"}} {{if this.numberOfCurrencies "are" "is"}} as follows:
+      <p><b>Note:</b> The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}}
+         to Naira {{if this.numberOfCurrencies "are" "is"}} obtained from NCS' website.
+         The {{if this.numberOfCurrencies "rates" "rate"}} {{if this.numberOfCurrencies "are" "is"}} as follows:
       </p>
       <ul>
       {{#each this.currencies as |currency|}}
