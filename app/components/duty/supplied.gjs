@@ -15,6 +15,14 @@ export default class Supplied extends Component {
     this.formData = this.db.getFormData();
   }
 
+  get fob() {
+    const fobField = Number(valueFromStr(this.formData.fobField));
+    const fobCurrency = this.formData.fobCurrency;
+    const currenciesRatesObj = this.db.getCurrenciesRatesObj();
+    const fobCurrencyRate = Number(currenciesRatesObj[fobCurrency]);
+    return fobField * fobCurrencyRate;
+  }
+
   <template>
     <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
@@ -23,7 +31,7 @@ export default class Supplied extends Component {
       </tr>
       <tr>
         <td>FOB</td>
-        <td>{{numFormatter (valueFromStr this.formData.fobField)}}</td>
+        <td>{{numFormatter this.fob}}</td>
       </tr>
       <tr>
         <td>Freight</td>
