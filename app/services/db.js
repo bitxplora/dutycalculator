@@ -101,4 +101,14 @@ export default class DB extends Service {
     const fobCurrencyRate = this.currenciesRatesObj[fobCurrencyCode];
     return fobRaw * fobCurrencyRate;
   }
+
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
+  getFreight() {
+    const freightRaw = Number(valueFromStr(this.formData.freightField));
+    const freightCurrencyCode = this.formData.freightCurrency;
+    const freightCurrencyRate = this.currenciesRatesObj[freightCurrencyCode];
+    return freightRaw * freightCurrencyRate;
+  }
 }
