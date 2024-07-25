@@ -20,6 +20,12 @@ export default class Supplied extends Component {
     return fobValue;
   }
 
+  /* Retrieved and returned Freight value from DB service */
+  get freight() {
+    const freightValue = this.db.getFreight();
+    return freightValue;
+  }
+
   <template>
     <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
@@ -32,7 +38,7 @@ export default class Supplied extends Component {
       </tr>
       <tr>
         <td>Freight</td>
-        <td>{{numFormatter (valueFromStr this.formData.freightField)}}</td>
+        <td>{{numFormatter this.freight}}</td>
       </tr>
       <tr>
         <td>Insurance</td>
