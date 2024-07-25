@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
-import valueFromStr from '../../helpers/valueFromStr.js';
 import numFormatter from '../../helpers/numFormatter';
 
 export default class Estimate extends Component {
@@ -38,10 +37,10 @@ export default class Estimate extends Component {
     return freightValue;
   }
 
+  /* Retrieved and returned Insurance value from DB service */
   get insurance() {
-    let insurance = this.#suppliedData.insuranceField;
-    insurance = valueFromStr(insurance);
-    return Number(insurance);
+    const insuranceValue = this.db.getInsurance();
+    return insuranceValue;
   }
 
   get vatRate() {
@@ -158,7 +157,7 @@ export default class Estimate extends Component {
     </div>
     <div>
       <p><b>Note:</b> The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}}
-         to Naira {{if this.numberOfCurrencies "are" "is"}} obtained from NCS website.
+         to NGN {{if this.numberOfCurrencies "are" "is"}} obtained from NCS website.
          The {{if this.numberOfCurrencies "rates" "rate"}} {{if this.numberOfCurrencies "are" "is"}} as follows:
       </p>
       <ul>
