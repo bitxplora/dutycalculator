@@ -32,11 +32,10 @@ export default class Estimate extends Component {
     return fobValue;
   }
 
+  /* Retrieved and returned Freight value from DB service */
   get freight() {
-    const freight = Number(valueFromStr(this.#suppliedData.freightField));
-    const freightCurrency = this.#suppliedData.freightCurrency;
-    const freightCurrencyRate = this.currenciesRatesObj[freightCurrency];
-    return freight * freightCurrencyRate;
+    const freightValue = this.db.getFreight();
+    return freightValue;
   }
 
   get insurance() {
