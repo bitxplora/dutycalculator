@@ -20,7 +20,9 @@
   --form-subtitle: 'Roboto Mono';
   --form-text: 'Roboto Flex';
 }
-
+* {
+   box-sizing: border-box;
+ }
 html {
   height: 100vh;
 }
@@ -57,7 +59,7 @@ body {
   font-weight: 700;
   color: var(--title-color);
   font-size: 2.2rem;
-  text-shadow: 4px 4px 4px #6c6c6c;
+  /* text-shadow: 4px 4px 4px #6c6c6c; */
 }
 
 .searchbox {
@@ -99,7 +101,7 @@ body {
   font-size: 1.5rem;
   color: var(--text-color);
   margin: 2;
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
   border: 0;
 }
 
@@ -161,9 +163,13 @@ input[type=search] {
   color: var(--accent-color);
 }
 
+h1.form-header {
+  font-size: 0.8rem;
+}
+
 .brand-text {
   font-family: var(--info);
-  color: var(--text-color);
+  /* color: var(--text-color); */
 }
 
 .hover-effect tr:hover {
@@ -199,19 +205,29 @@ input[type=search] {
   font-family: Lato;
 }
 
-.form-page {
-  display: grid;
-  justify-content: center;
-}
-
 .search-result-page {
   display: grid;
   justify-content: center;
   gap: 0.8rem;
 }
 
+.form-page {
+  display: grid;
+  justify-content: center;
+}
+
+.duty-page {
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  font-size: 0.9rem;
+  row-gap: 0.9rem;
+}
+
 .tippy-box[data-theme~='tippyTheme'] {
   background-color: #0b3242;
-  /* animation-name: rubberBand; */
 }
+
 
