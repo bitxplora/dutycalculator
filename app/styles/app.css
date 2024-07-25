@@ -20,9 +20,11 @@
   --form-subtitle: 'Roboto Mono';
   --form-text: 'Roboto Flex';
 }
+
 * {
    box-sizing: border-box;
  }
+
 html {
   height: 100vh;
 }
@@ -60,6 +62,11 @@ body {
   color: var(--title-color);
   font-size: 2.2rem;
   /* text-shadow: 4px 4px 4px #6c6c6c; */
+}
+
+/* h1.title { */
+h1{
+  font-family: var(--title);
 }
 
 .searchbox {
@@ -164,7 +171,9 @@ input[type=search] {
 }
 
 h1.form-header {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
+  color: var(--title-color);
+  font-weight: bold;
 }
 
 .brand-text {
