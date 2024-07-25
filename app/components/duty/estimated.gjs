@@ -199,6 +199,7 @@ export default class Estimate extends Component {
         font-size: 0.7rem;
         font-family: Lato;
         background-color: #cfecf7;
+        border-radius: 8px;
       }
     </style>
   </template>
