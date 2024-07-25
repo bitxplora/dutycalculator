@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
-import valueFromStr from '../../helpers/valueFromStr.js';
 import numFormatter from '../../helpers/numFormatter.js';
 
 export default class Supplied extends Component {
@@ -26,6 +25,12 @@ export default class Supplied extends Component {
     return freightValue;
   }
 
+  /* Retrieved and returned Insurance value from DB service */
+  get insurance() {
+    const insuranceValue = this.db.getInsurance();
+    return insuranceValue;
+  }
+
   <template>
     <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
@@ -42,7 +47,7 @@ export default class Supplied extends Component {
       </tr>
       <tr>
         <td>Insurance</td>
-        <td>{{numFormatter (valueFromStr this.formData.insuranceField)}}</td>
+        <td>{{numFormatter this.insurance}}</td>
       </tr>
       <tr>
         <td>Discription</td>
