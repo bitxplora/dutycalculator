@@ -111,4 +111,14 @@ export default class DB extends Service {
     const freightCurrencyRate = this.currenciesRatesObj[freightCurrencyCode];
     return freightRaw * freightCurrencyRate;
   }
+
+  /**
+   * Calculate the insurance value at the official exchange rate
+   */
+  getInsurance() {
+    const insuranceRaw = Number(valueFromStr(this.formData.insuranceField));
+    const insuranceCurCode = this.formData.insuranceCurrency;
+    const insuranceCurRate = this.currenciesRatesObj[insuranceCurCode];
+    return insuranceRaw * insuranceCurRate;
+  }
 }
