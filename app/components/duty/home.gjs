@@ -13,22 +13,25 @@ import { LinkTo } from '@ember/routing';
       </svg>
     </div>
     <div>
-      <h3>Estimated Duty</h3>
+      <h1>Estimated Duty</h1>
     </div>
   </div>
   <style>
   .button-home {
-    color: #1613AC;  
+    color: var(--accent-color);
   }
 
   .estimated {
     display: grid;
     place-items: center;
-    margin-top: 4%;
+    margin-top: 0.8rem;
   }
   
-  .estimated h3 {
-    color: #006994;
+  .estimated h1{
+    color: var(--title-color);
+    margin: 0.5rem 0 0 0;
+    font-size: 1.3rem;
+    font-weight: 500;
   }
   </style>
 </template>
