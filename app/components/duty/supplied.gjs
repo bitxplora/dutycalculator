@@ -32,6 +32,9 @@ export default class Supplied extends Component {
   }
 
   <template>
+    <div>
+      <h1 class='form form-header'>Data Supplied</h1>
+    </div>
     <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
         <td>CET Code</td>
@@ -55,8 +58,15 @@ export default class Supplied extends Component {
       </tr>
     </table>
     <style>
-      .dutySupplied tr td:nth-child(-n + 4):last-child {
+      .dutySupplied > tr:nth-child(1) > td:nth-child(2) {
         text-align: center;
+      }
+      .dutySupplied tr:nth-child(n+1):nth-child(-n+4) > td:nth-child(2) {
+        text-align: right;
+        padding-right: 20%;
+      }
+      .dutySupplied {
+        background-color: #cfecf7;
       }
     </style>
   </template>
