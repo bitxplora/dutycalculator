@@ -123,7 +123,11 @@ export default class Estimate extends Component {
   }
 
   <template>
+    <div class="duty-container">
     <div>
+      <h1 class='form form-header'>Estimated Duty</h1>
+    </div>
+    <div class="table-wrapper">
       <table class='pure-table pure-table-bordered brand-text dutyEstimated'>
         <tr>
           <td>CISS</td>
@@ -155,8 +159,9 @@ export default class Estimate extends Component {
         </tr>
       </table>
     </div>
-    <div>
-      <p><b>Note:</b> The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}}
+    <div class='dutyNoteText'>
+      <p><b>Note:</b> <br />
+         The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}}
          to NGN {{if this.numberOfCurrencies "are" "is"}} obtained from NCS website.
          The {{if this.numberOfCurrencies "rates" "rate"}} {{if this.numberOfCurrencies "are" "is"}} as follows:
       </p>
@@ -166,18 +171,34 @@ export default class Estimate extends Component {
       {{/each}}
       </ul>
     </div>
+    </div>
     <style>
       .dutyEstimated tr td:last-child {
-        text-align: center;
+        text-align: right;
+        padding-right: 20%;
         min-width: 12rem;
       }
-
       .dutyEstimated tr:last-child {
         font-weight: 800;
       }
 
       .dutyEstimated tr:nth-last-child(odd) {
         background-color: white;
+      }
+      .duty-container {
+        display: grid;
+        justify-content: center;
+      }
+      .table-wrapper {
+        display: grid;
+        justify-content: center;
+      }
+      .dutyNoteText {
+        margin-top: 1rem;
+        padding: 0.4rem;
+        font-size: 0.7rem;
+        font-family: Lato;
+        background-color: #cfecf7;
       }
     </style>
   </template>
