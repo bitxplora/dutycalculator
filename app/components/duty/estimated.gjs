@@ -125,7 +125,7 @@ export default class Estimate extends Component {
   <template>
     <div class="duty-container">
     <div>
-      <h1 class='form form-header'>Estimated Duty</h1>
+      <h1 class='form form-header'>Duty</h1>
     </div>
     <div class="table-wrapper">
       <table class='pure-table pure-table-bordered brand-text dutyEstimated'>
@@ -160,8 +160,9 @@ export default class Estimate extends Component {
       </table>
     </div>
     <div class='dutyNoteText'>
-      <p><b>Note:</b> <br />
-         The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}}
+      <p>Note:</p>
+      <p>
+         All the numberical figures on this page are in NGN. The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}}
          to NGN {{if this.numberOfCurrencies "are" "is"}} obtained from NCS website.
          The {{if this.numberOfCurrencies "rates" "rate"}} {{if this.numberOfCurrencies "are" "is"}} as follows:
       </p>
@@ -186,6 +187,7 @@ export default class Estimate extends Component {
         background-color: white;
       }
       .duty-container {
+        max-width: 630px;
         display: grid;
         justify-content: center;
       }
@@ -200,6 +202,15 @@ export default class Estimate extends Component {
         font-family: Lato;
         background-color: #cfecf7;
         border-radius: 8px;
+        letter-spacing: 0.08rem;
+      }
+      .dutyNoteText p:first-of-type {
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      .dutyNoteText p:last-of-type {
+        margin: 0.5rem 0 0.5rem 0;
       }
     </style>
   </template>
