@@ -33,7 +33,7 @@ export default class Supplied extends Component {
 
   <template>
     <div>
-      <h1 class='form form-header'>Data Supplied</h1>
+      <h1 class='form form-header'>Data</h1>
     </div>
     <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
@@ -58,16 +58,13 @@ export default class Supplied extends Component {
       </tr>
     </table>
     <style>
-      .dutySupplied > tr:nth-child(1) > td:nth-child(2) {
-        // text-align: center;
-      }
       .dutySupplied tr:nth-child(n+1):nth-child(-n+4) > td:nth-child(2) {
         text-align: right;
         padding-right: 20%;
-        // background-color: #dbf5ff;
       }
       .dutySupplied tr:nth-child(n+2):nth-child(-n+4) > td:nth-child(2):nth-child(n+2) {
         background-color: #dbf5ff;
+        font-weight: 550;
       }
       .dutySupplied {
         background-color: #cfecf7;
