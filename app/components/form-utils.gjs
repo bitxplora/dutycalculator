@@ -76,18 +76,19 @@ export default class Field extends Component {
         align-items: baseline;
         justify-content: flex-end;
         gap: 0.2rem;
-        // font-family: Lato;
+        font-family: Lato;
       }
-
-    .form-row input {
-      width: 14rem;
-    }
-
-    @media only screen and (min-width: 430px) {
       .form-row input {
-        width: 20rem;
+        width: 14rem;
       }
-    }
+      .pure-form-aligned .pure-control-group label {
+        margin: 0;
+      }
+      @media only screen and (min-width: 430px) {
+        .form-row input {
+          width: 20rem;
+        }
+      }
     </style>
   </template>
 }
