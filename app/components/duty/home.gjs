@@ -20,13 +20,11 @@ import { LinkTo } from '@ember/routing';
   .button-home {
     color: var(--accent-color);
   }
-
   .estimated {
     display: grid;
     place-items: center;
     margin-top: 0.8rem;
   }
-  
   .estimated h1{
     color: var(--title-color);
     margin: 0.5rem 0 0 0;
