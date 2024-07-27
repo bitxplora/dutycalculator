@@ -14,9 +14,9 @@
 
 
   /* font-family */
-  --title: 'Lilita One';
+  --title: 'Lilita One', sans-serif;
   /* --text: 'DM Sans'; */
-  --text: 'Roboto';
+  --text: Roboto;
   /* --info: Lato; */
   --info: Roboto;
   --form-subtitle: 'Roboto Mono';
@@ -35,7 +35,6 @@ body {
   position: relative;
   background-color: var(--bg-color);
   min-height: 100vh;
-  /* min-width: 375px; */
 }
 
 .page-container {
