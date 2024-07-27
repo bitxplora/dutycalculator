@@ -29,7 +29,6 @@ export default class SearchResult extends Component {
           </tr>
         </thead>
         <tbody class='hover-effect brand-text' {{on 'dblclick' this.doSelected}}>
-          {{log @searchResult}}
           {{#let @searchResult as |results|}}
           {{#each results as |result|}}
           <tr>
@@ -42,14 +41,31 @@ export default class SearchResult extends Component {
       </table>
     </div>
   <style>
+    .result-component {
+      min-width: 300px;
+    }
      #caption-message {
-        color: var(--accent-color);
-       font-size: 1.12rem;
-       font-family: var(--info);
+       color: var(--accent-color);
+       font-size: 0.9rem;
+       font-weight: 500;
+       font-family: Lato;
       }
-
     .result-component {
       margin-top: 5%;
+    }
+     .table-head > th:last-of-type {
+       display: flex;
+       place-content: center;
+    }
+    tbody.hover-effect {
+      color: 05171f;
+    }
+    tbody.hover-effect tr:hover {
+      background-color: #f2fafd;
+    }
+    tbody.hover-effect {
+      font-family: Lato;
+      font-size: 0.9rem;
     }
   </style>
 </template>
