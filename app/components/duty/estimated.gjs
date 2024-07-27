@@ -199,7 +199,7 @@ export default class Estimate extends Component {
         margin-top: 1rem;
         padding: 0.4rem;
         font-size: 0.7rem;
-        font-family: Lato;
+        font-family: 'Roboto Flex';
         background-color: #cfecf7;
         border-radius: 8px;
         letter-spacing: 0.08rem;
