@@ -184,14 +184,9 @@ h1.form-header {
   /* color: var(--text-color); */
 }
 
-.hover-effect tr:hover {
-  /* background-color: #cfecf7; */
-  background-color: #f2fafd;
-}
-
 .table-head {
-    background-color: #cfecf7;
-    color: var(--title-color);
+  background-color: #cfecf7;
+  color: var(--title-color);
 }
 
 .form-alignment {
@@ -219,7 +214,8 @@ h1.form-header {
 
 .search-result-page {
   display: grid;
-  justify-content: center;
+  place-content: center;
+  place-items: center;
   gap: 0.8rem;
 }
 
