@@ -12,6 +12,7 @@ import tippyTip from '../modifiers/tippyTip.js';
   </div>
   <style>
     .disclaimer {
+      padding-top: 2rem;
       display: flex;
       place-content: center;
       font-size: 1.0rem;
