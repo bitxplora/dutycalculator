@@ -51,7 +51,7 @@ export default class Form extends Component {
       }
 
       .form-position {
-        margin-top: 15%;
+        margin-top: 1.2rem;
         display: grid;
         justify-content: space-around;
       }

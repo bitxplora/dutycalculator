@@ -224,8 +224,13 @@ h1.form-header {
 }
 
 .form-page {
+  margin-top: 1.2rem;
   display: grid;
   justify-content: center;
+}
+
+.selected-item {
+  margin-top: 1.2rem;
 }
 
 .duty-page {
