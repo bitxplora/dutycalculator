@@ -22,16 +22,14 @@ export default class Form extends Component {
 
   <template>
     <div class="form-position">
-      <h5 class="form-subtitle">Fill the below</h5>
+      <h2 class="form-subtitle">Fill the below:</h2>
       <form id="dutyform" name="dutyform" class="pure-form pure-form-aligned" {{ on 'submit' this.doSave }}>
       <fieldset class='field-position'>
         <legend class="pure-form-message">For each row, select the appropriate currency and input the value.</legend>
         <div class="fields-group">
-          <div>
             <Field @model={{@model}} @transactionType='fob' />
             <Field @model={{@model}} @transactionType='freight' />
             <Field @model={{@model}} @transactionType='insurance' />
-          </div>
           <div>
             <button type="submit" class="pure-button pure-button-primary">Submit</button>
           </div>
@@ -43,17 +41,26 @@ export default class Form extends Component {
       .pure-form-aligned .pure-control-group label {
         width: fit-content;
       }
-
       .fields-group {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
+        display: grid;
+        font-family: Lato;
+      }
+      .fields-group label > .pure-form-aligned .pure-control-group label {
+        margin: 0;
       }
 
       .form-position {
         margin-top: 1.2rem;
         display: grid;
         justify-content: space-around;
+      }
+      h2.form-subtitle {
+        font-size: 1.0rem;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+        color: var(--title-color);
+        font-family: var(--title);
+        margin-bottom: 0.4rem;
       }
     </style>
   </template>
