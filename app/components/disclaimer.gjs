@@ -15,11 +15,11 @@ import tippyTip from '../modifiers/tippyTip.js';
       padding-top: 2rem;
       display: flex;
       place-content: center;
-      font-size: 1.0rem;
+      font-size: 0.9rem;
       color: var(--accent-color);
       font-family: var(--info);
       font-weight: 900;
-      letter-spacing: 0.3rem;
+      letter-spacing: 0.25rem;
     }
     </style>
 </template>
