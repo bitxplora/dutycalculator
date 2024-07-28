@@ -68,7 +68,6 @@ export default class Search extends Component {
         height: 2.5rem;
         width: 20rem;
         border-style: solid;
-        // border-width: 0.3rem;
         border-width: 0.3rem 0.15rem 0.3rem 0.3rem;
         background-color: #ffffff;
         color: #05171f;
