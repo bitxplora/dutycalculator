@@ -11,13 +11,21 @@ export default class Search extends Component {
 
   @tracked query = '';
 
+  search() {
+    this.db.addSearchItem(this.query);
+    this.router.transitionTo('search-result');
+  }
+
   @action doSearch(event) {
     if (event.key === 'Enter') {
       if (!this.query) return false;
-
-      this.db.addSearchItem(this.query);
-      this.router.transitionTo('search-result');
+      this.search();
     }
+  }
+
+  @action goSearch() {
+    if (!this.query) return false;
+    this.search();
   }
 
   <template>
@@ -31,7 +39,7 @@ export default class Search extends Component {
         @value={{this.query}}
         {{on "keyup" this.doSearch}}
       />
-      <button class="searchbutton" type="submit">
+      <button class="searchbutton" name="search-go" value={{this.query}} type="submit" {{on "click" this.goSearch}}>
         Go
       </button>
       <style>
