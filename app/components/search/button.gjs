@@ -34,13 +34,16 @@ import { LinkTo } from '@ember/routing';
       margin: auto;
       font-size: 0.7rem;
       max-width: 570px;
+      color: #05171f;
     }
     .search-button {
-      margin: 0.8rem 0rem 0rem 1.5rem;
+      margin: 1.2rem 0rem 0rem 1.5rem;
       border-radius: 0.4rem;
-      width: 8rem;
+      width: 8.5rem;
+      height: 2.5rem;
       padding: 0.4rem;
       font-family: 'Roboto Slab';
+      background-color: var(--title-color);
     }
   @media only screen and ( min-width: 710px ) {
     .note-message {
