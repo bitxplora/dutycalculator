@@ -42,6 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 96%;
+  min-height: 100vh;
   margin: auto;
 }
 
@@ -52,6 +53,8 @@ body {
 }
 
 .update {
+  /* display: grid; */
+  /* place-content: center; */
   font-family: var(--info);
   color: var(--accent-color);
   font-size: 0.8rem;
@@ -59,7 +62,6 @@ body {
 }
 
 .title {
-  margin-top: 36%;
   font-family: var(--title);
   font-weight: 700;
   color: var(--title-color);
@@ -76,18 +78,40 @@ h1{
 }
 
 .enquiry {
-  margin-top: 70%;
-  font-size: 1.0rem;
-  font-family: var(--info);
-  color: #0b3242;
+  font-size: 0.8rem;
+  font-family: Roboto;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  color: #05171f;
 }
 
-.page-container {
+.title-container {
+  margin-top: 4rem;
   position: relative;
-  min-height: 100vh;
-  /* min-width: 375px; */
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  /* margin-bottom: 0; */
+}
+
+.title-container p {
+  width: 80%;
+  background-color: #b9e3f3;
+  /* background-color: var(--title-color); */
+  letter-spacing: 0.1rem;
+  padding: 0.4rem;
+  margin: 0.8rem 0;
+  border-radius: 0.5rem;
+  font-family: Lato;
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 450;
+  text-align: center;
+  /* color: #ffffff; */
+}
+
+.title-container h1 {
+  margin-bottom: 0;
 }
 
 .footer-container {
@@ -126,8 +150,9 @@ div.container-homepage {
 
 .container-homepage {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  place-content: center;
+  place-items: center;
   margin: 0;
 }
 
@@ -145,13 +170,6 @@ input {
   border-radius: 0.4rem;
   border-color: var(--title-color);
   text-align: center;
-}
-
-input[type=search] {
-  font-family: var(--info);
-  font-size: 0.9rem;
-  color: var(--text-color);
-  text-align: left;
 }
 
 .edit-button {
@@ -185,8 +203,8 @@ h1.form-header {
 }
 
 .table-head {
-  background-color: #cfecf7;
-  color: var(--title-color);
+    background-color: #cfecf7;
+    color: var(--title-color);
 }
 
 .form-alignment {
@@ -214,8 +232,7 @@ h1.form-header {
 
 .search-result-page {
   display: grid;
-  place-content: center;
-  place-items: center;
+  justify-content: center;
   gap: 0.8rem;
 }
 
