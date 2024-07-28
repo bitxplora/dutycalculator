@@ -7,7 +7,7 @@ import { fn } from '@ember/helper';
 
 export default class Field extends Component {
   messages = {
-    fob: 'FOB means Free On Board. The value of the goods at origin port',
+    fob: 'FOB stands for Free On Board. The value of the goods at the port of origin ',
     freight:
       'The cost of shipping from the origin port to the destination port',
     insurance: 'The cost of insurance for the goods',
