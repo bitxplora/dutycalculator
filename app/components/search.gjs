@@ -46,7 +46,7 @@ export default class Search extends Component {
         padding: 0;
         font-family: Montserrat;
         border-style: solid;
-        border-width: 0.3rem;
+        border-width: 0.3rem 0.3rem 0.3rem 0.15rem;
         border-color: var(--title-color);
       }
       input[type=search] {
@@ -60,7 +60,8 @@ export default class Search extends Component {
         height: 2.5rem;
         width: 20rem;
         border-style: solid;
-        border-width: 0.3rem;
+        // border-width: 0.3rem;
+        border-width: 0.3rem 0.15rem 0.3rem 0.3rem;
         background-color: #ffffff;
         color: #05171f;
         border-radius: 0.4rem 0rem 0rem 0.4rem;
