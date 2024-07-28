@@ -48,7 +48,12 @@ export default class Form extends Component {
       .fields-group label > .pure-form-aligned .pure-control-group label {
         margin: 0;
       }
-
+      .fields-group button {
+        background-color: var(--title-color);
+        font-family: Montserrat;
+        font-weight: 700;
+        margin-top: 1rem;
+      }
       .form-position {
         margin-top: 1.2rem;
         display: grid;
