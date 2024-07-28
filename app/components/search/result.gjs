@@ -20,7 +20,7 @@ export default class SearchResult extends Component {
     <div class='result-component'>
       <table class="pure-table pure-table-bordered">
         <caption id='caption-message'>
-          Double click on the most appropriate description that best matches your item
+          Please double-click on the most appropriate description that best matches your item
         </caption>
         <thead>
           <tr class="table-head">
@@ -45,10 +45,11 @@ export default class SearchResult extends Component {
       min-width: 300px;
     }
      #caption-message {
-       color: var(--accent-color);
+       color: #003e57;
+       font-style: oblique;
        font-size: 0.9rem;
-       font-weight: 500;
-       font-family: Lato;
+       font-weight: 700;
+       font-family: 'Roboto Slab';
       }
     .result-component {
       margin-top: 5%;
@@ -58,14 +59,23 @@ export default class SearchResult extends Component {
        place-content: center;
     }
     tbody.hover-effect {
-      color: 05171f;
+      color: #ccf0ff;
     }
     tbody.hover-effect tr:hover {
-      background-color: #f2fafd;
+      background-color: #b9e3f3;
     }
     tbody.hover-effect {
       font-family: Lato;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 560;
+      letter-spacing: 0.1rem;
+      color: #00161f;
+      background-color: #f2fafd;
+    }
+    .table-head {
+      background-color: #003e57;
+      color: #ffffff;
+      font-size: 0.8rem;
     }
   </style>
 </template>
