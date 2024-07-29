@@ -45,11 +45,11 @@ import { LinkTo } from '@ember/routing';
       font-family: 'Roboto Slab';
       background-color: var(--title-color);
     }
-  @media only screen and ( min-width: 710px ) {
-    .note-message {
-      width: 80%;
-      margin: auto;
-    }
+    @media all screen and ( min-width: 710px ) {
+      .note-message {
+        width: 80%;
+        margin: auto;
+      }
   }
   </style>
 </template>
