@@ -120,6 +120,9 @@ h1{
 }
 
 /* .content-container { */
+/*   display: grid; */
+/*   justify-content: center; */
+/*   justify-items: center; */
 /* } */
 
 /* .disclaimer { */
@@ -190,11 +193,18 @@ input {
   color: var(--accent-color);
 }
 
-h1.form-header {
-  font-size: 0.88rem;
+/* h1.form-header { */
+/*   font-size: 0.88rem; */
+/*   color: var(--title-color); */
+/*   font-weight: 900; */
+/*   font-family: var(--form-subtitle); */
+/* } */
+
+h2.form-header {
+  font-size: 1.2rem;
   color: var(--title-color);
   font-weight: 900;
-  font-family: var(--form-subtitle);
+  font-family: var(--title);
 }
 
 .brand-text {
@@ -209,10 +219,16 @@ h1.form-header {
 
 .form-alignment {
   display: grid;
+  place-content: center;
+  place-items: center;
 }
 
 .table-result {
   font-family: Lato;
+}
+
+.table-result  > tbody tr td:last-of-type {
+  min-width: 100%;
 }
 
 .search-result-page {
@@ -244,9 +260,9 @@ h1.form-header {
 
 .tippy-box[data-theme~='tippyTheme'] {
   background-color: #0b3242;
-  font-size: 0.8rem;
-  font-family: Roboto;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-family: 'Roboto Mono';
+  font-weight: 450;
 }
 
 
