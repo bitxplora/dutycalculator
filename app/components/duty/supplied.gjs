@@ -32,13 +32,14 @@ export default class Supplied extends Component {
   }
 
   <template>
+    <div class="dutyComponent">
     <div>
-      <h1 class='form form-header'>Data</h1>
+      <h2 class='form form-header'>Data</h2>
     </div>
     <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
         <td>CET Code</td>
-        <td>{{this.selectedItem.cetcode}}</td>
+        <td style="min-width:200px">{{this.selectedItem.cetcode}}</td>
       </tr>
       <tr>
         <td>FOB</td>
@@ -57,10 +58,11 @@ export default class Supplied extends Component {
         <td>{{this.selectedItem.description}}</td>
       </tr>
     </table>
+    </div>
     <style>
       .dutySupplied tr:nth-child(n+1):nth-child(-n+4) > td:nth-child(2) {
         text-align: right;
-        padding-right: 20%;
+        padding-right: 30%;
       }
       .dutySupplied tr:nth-child(n+2):nth-child(-n+4) > td:nth-child(2):nth-child(n+2) {
         background-color: #dbf5ff;
@@ -68,6 +70,16 @@ export default class Supplied extends Component {
       }
       .dutySupplied {
         background-color: #cfecf7;
+      }
+      table.dutySupplied > tr td:last-of-type) {
+        min-width: 300px;
+      }
+      .pure-table .dutySupplied > tr:nth-child(1) > td:nth-child(2) {
+        min-width: 300px;
+      }
+      .dutyComponent {
+        display: grid;
+        justify-content: start;
       }
     </style>
   </template>
