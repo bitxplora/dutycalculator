@@ -35,10 +35,6 @@ export default class Search extends Component {
     this.search();
   }
 
-  get tippyOption() {
-    return { followCursor: 'horizontal' };
-  }
-
   <template>
     {{#if this.error}}
     <div class="error">
@@ -58,7 +54,6 @@ export default class Search extends Component {
         {{on "keyup" this.doSearch}}
         {{tippyTip 'click' 'top'
            "To get started, please enter the item's name (like 'pipe') or use the HS code (for example, '750720000') to search."
-           this.tippyOption
         }}
       />
       <button class="searchbutton" name="search-go" value={{this.query}} type="submit" {{on "click" this.goSearch}}>
