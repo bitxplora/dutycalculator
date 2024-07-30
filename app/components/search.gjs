@@ -4,15 +4,22 @@ import { on } from '@ember/modifier';
 import { service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import tippyTip from '../modifiers/tippyTip.js';
 
 export default class Search extends Component {
   @service router;
   @service db;
 
   @tracked query = '';
+  @tracked error = false;
 
-  search() {
+  async search() {
     this.db.addSearchItem(this.query);
+    const result = await this.db.search();
+    if (result.length === 0) {
+      this.error = true;
+      return false;
+    }
     this.router.transitionTo('search-result');
   }
 
@@ -28,16 +35,31 @@ export default class Search extends Component {
     this.search();
   }
 
+  get tippyOption() {
+    return { followCursor: 'horizontal' };
+  }
+
   <template>
+    {{#if this.error}}
+    <div class="error">
+      <p>
+        The item <b> {{this.query}} </b> is not found in the NCS' CET tariff.
+      </p>
+    </div>
+    {{/if}}
     <div class='searchcomponent'>
       <Input
         aria-label="Type the name of your item or the tariff code then press enter key"
-        placeholder=" Search the item e.g. pipe or 7507200000"
         required="true"
         aria-required="true"
+        placeholder=" Search"
         @type="search"
         @value={{this.query}}
         {{on "keyup" this.doSearch}}
+        {{tippyTip 'click' 'top'
+           "To get started, please enter the item's name (like 'pipe') or use the HS code (for example, '750720000') to search."
+           this.tippyOption
+        }}
       />
       <button class="searchbutton" name="search-go" value={{this.query}} type="submit" {{on "click" this.goSearch}}>
         Go
@@ -58,15 +80,17 @@ export default class Search extends Component {
         border-color: var(--title-color);
       }
       input[type=search] {
-        font-family: Lato;
-        font-size: 1.0rem;
-        font-weight: 800;
+        font-family: 'Roboto Mono';
+        font-size: 90%;
+        font-weight: 900;
         text-align: left;
       }
-
+      .searchbox {
+        width: 100%;
+      }
       .searchbox input {
         height: 2.5rem;
-        width: 20rem;
+        width: 100%;
         border-style: solid;
         border-width: 0.3rem 0.15rem 0.3rem 0.3rem;
         background-color: #ffffff;
@@ -78,10 +102,33 @@ export default class Search extends Component {
         padding: 0;
       }
       .searchcomponent {
-        margin-top: 2rem;
+        width: 100%;
+        margin-top: 0.4rem;
         display: flex;
         place-content: center;
         place-items: center;
+      }
+      .error {
+        margin-bottom: 0;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        color: red;
+        font-size: 0.85rem;
+        font-weight: 500;
+        font-family: Lato;
+      }
+      .error p {
+        padding: 0.5rem;
+        width: 40%;
+        background-color: #fffbda;
+        margin-bottom: 0;
+        display: grid;
+        place-content: center;
+        place-items: center;
+        border-radius: 0.5rem;
+        gap: 0.2rem;
+        text-align: center;
       }
       </style>
     </div>
