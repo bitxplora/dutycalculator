@@ -7,24 +7,24 @@ export default class Estimate extends Component {
 
   #suppliedData;
   #cumstomData;
-  currencies;
-  currenciesRatesObj;
+  // currencies;
+  // currenciesRatesObj;
 
   constructor() {
     super(...arguments);
     this.#suppliedData = this.db.getFormData();
     this.#cumstomData = this.db.getSelected();
-    this.currencies = this.db.getCurrenciesAndRates();
-    this.currenciesRatesObj = this.db.getCurrenciesRatesObj();
+    // this.currencies = this.db.getCurrenciesAndRates();
+    // this.currenciesRatesObj = this.db.getCurrenciesRatesObj();
   }
 
-  get numberOfCurrencies() {
-    if (this.currencies.length > 1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  // get numberOfCurrencies() {
+  //   if (this.currencies.length > 1) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   get fob() {
     const fobValue = this.db.getFob();
@@ -114,19 +114,17 @@ export default class Estimate extends Component {
     );
   }
 
-  get currenciesAndRates() {
-    return this.currencies;
-  }
+  // get currenciesAndRates() {
+  //   return this.currencies;
+  // }
 
-  get currencyList() {
-    return Object.keys(this.currenciesRatesObj).join(', ');
-  }
+  // get currencyList() {
+  //   return Object.keys(this.currenciesRatesObj).join(', ');
+  // }
 
   <template>
     <div class="duty-container">
-    <div>
-      <h1 class='form form-header'>Duty</h1>
-    </div>
+      <h2 class='form form-header'>Duty</h2>
     <div class="table-wrapper">
       <table class='pure-table pure-table-bordered brand-text dutyEstimated'>
         <tr>
@@ -159,19 +157,6 @@ export default class Estimate extends Component {
         </tr>
       </table>
     </div>
-    <div class='dutyNoteText'>
-      <p>Note:</p>
-      <p>
-         All the numberical figures on this page are in NGN. The exchange {{if this.numberOfCurrencies "rates" "rate"}} used to convert {{this.currencyList}}
-         to NGN {{if this.numberOfCurrencies "are" "is"}} obtained from NCS website.
-         The {{if this.numberOfCurrencies "rates" "rate"}} {{if this.numberOfCurrencies "are" "is"}} as follows:
-      </p>
-      <ul>
-      {{#each this.currencies as |currency|}}
-        <li> {{currency.code}}1 to NGN{{currency.rate}}</li>
-      {{/each}}
-      </ul>
-    </div>
     </div>
     <style>
       .dutyEstimated tr td:last-child {
@@ -182,35 +167,18 @@ export default class Estimate extends Component {
       .dutyEstimated tr:last-child {
         font-weight: 800;
       }
-
       .dutyEstimated tr:nth-last-child(odd) {
         background-color: white;
       }
       .duty-container {
-        max-width: 630px;
+        width: 50%;
+        margin-top: 2rem;
         display: grid;
-        justify-content: center;
       }
       .table-wrapper {
         display: grid;
         justify-content: center;
-      }
-      .dutyNoteText {
-        margin-top: 1rem;
-        padding: 0.4rem;
-        font-size: 0.7rem;
-        font-family: 'Roboto Flex';
-        background-color: #cfecf7;
-        border-radius: 8px;
-        letter-spacing: 0.08rem;
-      }
-      .dutyNoteText p:first-of-type {
-        font-size: 0.8rem;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
-      .dutyNoteText p:last-of-type {
-        margin: 0.5rem 0 0.5rem 0;
+        justify-items: center;
       }
     </style>
   </template>
