@@ -228,7 +228,7 @@ h2.form-header {
 }
 
 .table-result  > tbody tr td:last-of-type {
-  min-width: 100%;
+  min-width: 80%;
 }
 
 .search-result-page {
