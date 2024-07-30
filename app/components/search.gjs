@@ -52,7 +52,7 @@ export default class Search extends Component {
         aria-label="Type the name of your item or the tariff code then press enter key"
         required="true"
         aria-required="true"
-        placeholder=" Search"
+        placeholder=" Search for the item"
         @type="search"
         @value={{this.query}}
         {{on "keyup" this.doSearch}}
