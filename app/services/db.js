@@ -1,6 +1,5 @@
 import Service from '@ember/service';
 import valueFromStr from '../helpers/valueFromStr';
-// import { hash } from 'rsvp';
 
 export default class DB extends Service {
   server = 'https://10.35.51.85:5000';
@@ -39,7 +38,6 @@ export default class DB extends Service {
     ]);
   }
 
-  // async getCurrencyRates() {
   async setCurrenciesAndRates() {
     const params = new URLSearchParams();
 
@@ -51,14 +49,9 @@ export default class DB extends Service {
     ${this.server}/${this.country}/exchanges/?${queryString}
       `);
 
-    // const result = await response.json();
     this.currencies = await response.json();
-    // console.log(result);
-
-    // return result;
   }
 
-  // get currenciesRates() {
   setCurrenciesRatesObj() {
     const currenciesAndRates = this.currencies;
     for (let entry of currenciesAndRates) {
@@ -82,7 +75,6 @@ export default class DB extends Service {
       `);
     const result = await response.json();
 
-    // console.log(result);
     return result;
   }
 
