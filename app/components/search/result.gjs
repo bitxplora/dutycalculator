@@ -41,15 +41,15 @@ export default class SearchResult extends Component {
       </table>
     </div>
   <style>
-    .result-component {
-      min-width: 300px;
-    }
      #caption-message {
        color: #003e57;
        font-style: oblique;
        font-size: 0.9rem;
        font-weight: 700;
        font-family: 'Roboto Slab';
+      }
+      .table-head > th:nth-child(2) {
+       min-width: 200px;
       }
     .result-component {
       margin-top: 5%;
