@@ -12,7 +12,7 @@ export default class DB extends Service {
   #currencies; // Array of object currency containing: code, name and rate.
   #selected = {}; // Object containing the row selected by the user by double-click.
   #formData = {}; // Object containing form data; fobCurrency, fobField, freight, insurance
-  currenciesRatesObj = {};
+  #currenciesRatesObj = {}; // Object containing currency code and rate for the once used in form { ILS: 388.34, INR: 17.841, JPY: 9.576 }
   fob;
   freight;
   insurance;
@@ -81,8 +81,9 @@ export default class DB extends Service {
     for (let entry of currenciesAndRates) {
       let code = entry['code'];
       let rate = entry['rate'];
-      this.currenciesRatesObj[code] = rate;
+      this.#currenciesRatesObj[code] = rate;
     }
+    console.log(this.#currenciesRatesObj);
   }
 
   /**
@@ -96,7 +97,7 @@ export default class DB extends Service {
    * Calculate the freight value at the official exchange rate
    */
   getCurrenciesRatesObj() {
-    return this.currenciesRatesObj;
+    return this.#currenciesRatesObj;
   }
 
   /**
@@ -140,7 +141,7 @@ export default class DB extends Service {
   getFob() {
     const fobRaw = Number(valueFromStr(this.#formData.fobField));
     const fobCurrencyCode = this.#formData.fobCurrency;
-    const fobCurrencyRate = this.currenciesRatesObj[fobCurrencyCode];
+    const fobCurrencyRate = this.#currenciesRatesObj[fobCurrencyCode];
     return fobRaw * fobCurrencyRate;
   }
 
@@ -150,7 +151,7 @@ export default class DB extends Service {
   getFreight() {
     const freightRaw = Number(valueFromStr(this.#formData.freightField));
     const freightCurrencyCode = this.#formData.freightCurrency;
-    const freightCurrencyRate = this.currenciesRatesObj[freightCurrencyCode];
+    const freightCurrencyRate = this.#currenciesRatesObj[freightCurrencyCode];
     return freightRaw * freightCurrencyRate;
   }
 
@@ -160,7 +161,7 @@ export default class DB extends Service {
   getInsurance() {
     const insuranceRaw = Number(valueFromStr(this.#formData.insuranceField));
     const insuranceCurCode = this.#formData.insuranceCurrency;
-    const insuranceCurRate = this.currenciesRatesObj[insuranceCurCode];
+    const insuranceCurRate = this.#currenciesRatesObj[insuranceCurCode];
     return insuranceRaw * insuranceCurRate;
   }
 }
