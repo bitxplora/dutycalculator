@@ -1,12 +1,15 @@
 import Service from '@ember/service';
 import valueFromStr from '../helpers/valueFromStr';
 
+/**
+ * Calculate the freight value at the official exchange rate
+ */
 export default class DB extends Service {
   server = 'https://10.35.51.85:5000';
-  country = 'ngn';
+  country = 'ngn'; // The currency code serves as the route for each country.
 
-  #searchItem;
-  currencies;
+  #searchItem; // The item searched by the user.
+  #currencies; // Array of object currency containing: code, name and rate.
   #selected = {};
   formData = {};
   currenciesRatesObj = {};
@@ -14,22 +17,37 @@ export default class DB extends Service {
   freight;
   insurance;
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   addSearchItem(item) {
     this.#searchItem = item;
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   addFormData(data) {
     Object.assign(this.formData, data);
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   getSelected() {
     return this.#selected;
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   getFormData() {
     return this.formData;
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   getCurrencies() {
     return new Set([
       this.formData.fobCurrency,
@@ -38,6 +56,9 @@ export default class DB extends Service {
     ]);
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   async setCurrenciesAndRates() {
     const params = new URLSearchParams();
 
@@ -49,11 +70,14 @@ export default class DB extends Service {
     ${this.server}/${this.country}/exchanges/?${queryString}
       `);
 
-    this.currencies = await response.json();
+    this.#currencies = await response.json();
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   setCurrenciesRatesObj() {
-    const currenciesAndRates = this.currencies;
+    const currenciesAndRates = this.#currencies;
     for (let entry of currenciesAndRates) {
       let code = entry['code'];
       let rate = entry['rate'];
@@ -61,14 +85,23 @@ export default class DB extends Service {
     }
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   getCurrenciesAndRates() {
-    return this.currencies;
+    return this.#currencies;
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   getCurrenciesRatesObj() {
     return this.currenciesRatesObj;
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   async search() {
     const response = await fetch(`
       ${this.server}/${this.country}/items/${this.#searchItem}
@@ -78,6 +111,9 @@ export default class DB extends Service {
     return result;
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   async getCurrencyCodes() {
     const response = await fetch(`
       ${this.server}/${this.country}/currency/codes
@@ -86,6 +122,9 @@ export default class DB extends Service {
     return result;
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   async addCetcodeSelected(cetcode) {
     const response = await fetch(`
       ${this.server}/${this.country}/items/${cetcode}
@@ -95,6 +134,9 @@ export default class DB extends Service {
     Object.assign(this.#selected, result[0]);
   }
 
+  /**
+   * Calculate the freight value at the official exchange rate
+   */
   getFob() {
     const fobRaw = Number(valueFromStr(this.formData.fobField));
     const fobCurrencyCode = this.formData.fobCurrency;
