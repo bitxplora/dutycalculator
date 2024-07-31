@@ -98,7 +98,6 @@ export default class Search extends Component {
       }
       .searchcomponent {
         width: 100%;
-        margin-top: 20%;
         display: flex;
         place-content: center;
         place-items: center;
