@@ -13,9 +13,6 @@ export default class DB extends Service {
   #selected = {}; // Object containing the row selected by the user by double-click.
   #formData = {}; // Object containing form data; fobCurrency, fobField, freight, insurance
   #currenciesRatesObj = {}; // Object containing currency code and rate for the once used in form { ILS: 388.34, INR: 17.841, JPY: 9.576 }
-  fob;
-  freight;
-  insurance;
 
   /**
    * Calculate the freight value at the official exchange rate
@@ -83,7 +80,6 @@ export default class DB extends Service {
       let rate = entry['rate'];
       this.#currenciesRatesObj[code] = rate;
     }
-    console.log(this.#currenciesRatesObj);
   }
 
   /**
