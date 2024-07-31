@@ -10,8 +10,8 @@ export default class DB extends Service {
 
   #searchItem; // The item searched by the user.
   #currencies; // Array of object currency containing: code, name and rate.
-  #selected = {};
-  formData = {};
+  #selected = {}; // Object containing the row selected by the user by double-click.
+  #formData = {}; // Object containing form data; fobCurrency, fobField, freight, insurance
   currenciesRatesObj = {};
   fob;
   freight;
@@ -28,7 +28,7 @@ export default class DB extends Service {
    * Calculate the freight value at the official exchange rate
    */
   addFormData(data) {
-    Object.assign(this.formData, data);
+    Object.assign(this.#formData, data);
   }
 
   /**
@@ -42,7 +42,7 @@ export default class DB extends Service {
    * Calculate the freight value at the official exchange rate
    */
   getFormData() {
-    return this.formData;
+    return this.#formData;
   }
 
   /**
@@ -50,9 +50,9 @@ export default class DB extends Service {
    */
   getCurrencies() {
     return new Set([
-      this.formData.fobCurrency,
-      this.formData.freightCurrency,
-      this.formData.insuranceCurrency,
+      this.#formData.fobCurrency,
+      this.#formData.freightCurrency,
+      this.#formData.insuranceCurrency,
     ]);
   }
 
@@ -138,8 +138,8 @@ export default class DB extends Service {
    * Calculate the freight value at the official exchange rate
    */
   getFob() {
-    const fobRaw = Number(valueFromStr(this.formData.fobField));
-    const fobCurrencyCode = this.formData.fobCurrency;
+    const fobRaw = Number(valueFromStr(this.#formData.fobField));
+    const fobCurrencyCode = this.#formData.fobCurrency;
     const fobCurrencyRate = this.currenciesRatesObj[fobCurrencyCode];
     return fobRaw * fobCurrencyRate;
   }
@@ -148,8 +148,8 @@ export default class DB extends Service {
    * Calculate the freight value at the official exchange rate
    */
   getFreight() {
-    const freightRaw = Number(valueFromStr(this.formData.freightField));
-    const freightCurrencyCode = this.formData.freightCurrency;
+    const freightRaw = Number(valueFromStr(this.#formData.freightField));
+    const freightCurrencyCode = this.#formData.freightCurrency;
     const freightCurrencyRate = this.currenciesRatesObj[freightCurrencyCode];
     return freightRaw * freightCurrencyRate;
   }
@@ -158,8 +158,8 @@ export default class DB extends Service {
    * Calculate the insurance value at the official exchange rate
    */
   getInsurance() {
-    const insuranceRaw = Number(valueFromStr(this.formData.insuranceField));
-    const insuranceCurCode = this.formData.insuranceCurrency;
+    const insuranceRaw = Number(valueFromStr(this.#formData.insuranceField));
+    const insuranceCurCode = this.#formData.insuranceCurrency;
     const insuranceCurRate = this.currenciesRatesObj[insuranceCurCode];
     return insuranceRaw * insuranceCurRate;
   }
