@@ -86,6 +86,14 @@ export default class DB extends Service {
     return result;
   }
 
+  async getCurrencyCodes() {
+    const response = await fetch(`
+      ${this.server}/${this.country}/currency/codes
+      `);
+    const result = await response.json();
+    return result;
+  }
+
   async addCetcodeSelected(cetcode) {
     const response = await fetch(`
       ${this.server}/${this.country}/items/${cetcode}
