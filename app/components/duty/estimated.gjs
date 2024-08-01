@@ -7,84 +7,84 @@ export default class Estimate extends Component {
 
   #suppliedData;
   #cumstomData;
-  // currencies;
-  // currenciesRatesObj;
 
   constructor() {
     super(...arguments);
     this.#suppliedData = this.db.getFormData();
     this.#cumstomData = this.db.getSelected();
-    // this.currencies = this.db.getCurrenciesAndRates();
-    // this.currenciesRatesObj = this.db.getCurrenciesRatesObj();
   }
-
-  // get numberOfCurrencies() {
-  //   if (this.currencies.length > 1) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   get fob() {
     const fobValue = this.db.getFob();
+    if (!fobValue) return 0;
     return fobValue;
   }
 
   /* Retrieved and returned Freight value from DB service */
   get freight() {
     const freightValue = this.db.getFreight();
+    if (!freightValue) return 0;
     return freightValue;
   }
 
   /* Retrieved and returned Insurance value from DB service */
   get insurance() {
     const insuranceValue = this.db.getInsurance();
+    if (!insuranceValue) return 0;
     return insuranceValue;
   }
 
   get vatRate() {
     const vat = Number(this.#cumstomData.vat);
+    if (!vat) return 0;
     return vat;
   }
 
   get idRate() {
     const id = Number(this.#cumstomData.id);
+    if (!id) return 0;
     return id;
   }
 
   get lvyRate() {
     const lvy = Number(this.#cumstomData.lvy);
+    if (!lvy) return 0;
     return lvy;
   }
 
   get cif() {
     const cif = this.fob + this.freight + this.insurance;
+    if (!cif) return 0;
     return cif;
   }
 
   get ciss() {
     const ciss = (1 / 100) * this.fob;
+    if (!ciss) return 0;
     return ciss;
   }
 
   get surface() {
     const surface = (this.idRate / 100) * this.cif;
+    if (!surface) return 0;
     return surface;
   }
 
   get etls() {
     const etls = (0.5 / 100) * this.cif;
+    if (!etls) return 0;
     return etls;
   }
 
   get surcharge() {
     const surcharge = (7 / 100) * this.surface;
+    if (!surcharge) return 0;
     return surcharge;
   }
 
   get levy() {
     const levy = this.lvyRate ? (this.lvyRate / 100) * this.cif : 0;
+    if (!levy) return 0;
     return levy;
   }
 
@@ -113,14 +113,6 @@ export default class Estimate extends Component {
       this.vat
     );
   }
-
-  // get currenciesAndRates() {
-  //   return this.currencies;
-  // }
-
-  // get currencyList() {
-  //   return Object.keys(this.currenciesRatesObj).join(', ');
-  // }
 
   <template>
     <div class="duty-container">
