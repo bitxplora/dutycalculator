@@ -16,18 +16,21 @@ export default class Supplied extends Component {
 
   get fob() {
     const fobValue = this.db.getFob();
+    if (!fobValue) return 0;
     return fobValue;
   }
 
   /* Retrieved and returned Freight value from DB service */
   get freight() {
     const freightValue = this.db.getFreight();
+    if (!freightValue) return 0;
     return freightValue;
   }
 
   /* Retrieved and returned Insurance value from DB service */
   get insurance() {
     const insuranceValue = this.db.getInsurance();
+    if (!insuranceValue) return 0;
     return insuranceValue;
   }
 
