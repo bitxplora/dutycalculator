@@ -4,8 +4,8 @@ import { service } from '@ember/service';
 export default class Estimate extends Component {
   @service db;
 
-  currencies;
-  currenciesRatesObj;
+  currencies; // Array of currency exchange Object containing e.g { code: "HUF", name: "Hungary Forint", rate: 2.718 }
+  currenciesRatesObj; // Object of currencies used in the transaction from FormDAta e.g { GHS: 70.235, HKD: 180.062, HUF: 2.718 }
 
   constructor() {
     super(...arguments);
@@ -14,6 +14,7 @@ export default class Estimate extends Component {
   }
 
   get numberOfCurrencies() {
+    if (!this.currencies) return false;
     if (this.currencies.length > 1) {
       return true;
     } else {
