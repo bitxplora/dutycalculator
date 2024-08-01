@@ -1,10 +1,11 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
 
 export default class extends Route {
-  async model() {
-    const response = await fetch('https://10.35.51.85:5000/ngn/update');
-    const last = await response.json();
+  @service db;
 
+  async model() {
+    const last = await this.db.getLastUpdate();
     return last;
   }
 }
