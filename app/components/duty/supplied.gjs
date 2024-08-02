@@ -41,7 +41,7 @@ export default class Supplied extends Component {
     </div>
     <table class='pure-table pure-table-bordered brand-text dutySupplied'>
       <tr>
-        <td>CET Code</td>
+        <td>HS Code</td>
         <td style="min-width:200px">{{this.selectedItem.cetcode}}</td>
       </tr>
       <tr>

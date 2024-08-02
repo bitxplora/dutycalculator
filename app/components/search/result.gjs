@@ -24,7 +24,7 @@ export default class SearchResult extends Component {
         </caption>
         <thead>
           <tr class="table-head">
-            <th>CET Code</th>
+            <th>HS Code</th>
             <th>Description</th>
           </tr>
         </thead>
