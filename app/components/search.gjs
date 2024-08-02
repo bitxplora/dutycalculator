@@ -39,7 +39,7 @@ export default class Search extends Component {
     {{#if this.error}}
     <div class="error">
       <p>
-        The item <b> {{this.query}} </b> is not found in the NCS' CET tariff.
+        The item <b>{{this.query}}</b> is not found in the NCS' CET tariff section!
       </p>
     </div>
     {{/if}}
@@ -103,26 +103,19 @@ export default class Search extends Component {
         place-items: center;
       }
       .error {
-        margin-bottom: 0;
         display: flex;
         place-content: center;
-        place-items: center;
-        color: red;
+      }
+      .error p {
+        padding: 0.6rem;
+        width: content-fit;
+        background-color: #ffcddf;
+        color: #330113;
+        margin-bottom: 0.3rem;
+        border-radius: 0.3rem;
         font-size: 0.85rem;
         font-weight: 500;
         font-family: Lato;
-      }
-      .error p {
-        padding: 0.5rem;
-        width: 40%;
-        background-color: #fffbda;
-        margin-bottom: 0;
-        display: grid;
-        place-content: center;
-        place-items: center;
-        border-radius: 0.5rem;
-        gap: 0.2rem;
-        text-align: center;
       }
       </style>
     </div>
