@@ -1,0 +1,42 @@
+module.exports = function(environment) {
+  return {
+    delivery: ['meta'],
+    policy: {
+      // Deny everything by default
+      'default-src': ["'none'"],
+      // Deny everything by default
+      'connect-src': [
+        "'self'",
+        'https://api.importduty.ng:5000',
+        'https://10.35.51.193:5000',
+      ],
+      // Allow scripts, images and media from the same host as the index.html is served ('self')
+      'script-src': ["'self'", "'unsafe-inline'"],
+      'img-src': ["'self'"],
+      'media-src': ["'self'"],
+      // Style sheet should be loaded from same host and from https://fonts.googleapis.com for Google fonts
+      'style-src': [
+        "'self'",
+        "'inline'",
+        "'unsafe-inline'",
+        'app.css',
+        'https://fonts.googleapis.com',
+        'https://fonts.gstatic.com',
+        'https://cdn.jsdelivr.net',
+        'http://localhost:4200',
+      ],
+      'style-src-elem': [
+        "'self'",
+        "'inline'",
+        "'unsafe-inline'",
+        'app.css',
+        'https://fonts.googleapis.com',
+        'https://fonts.gstatic.com',
+        'https://cdn.jsdelivr.net',
+        'http://localhost:4200',
+      ],
+      // Only allow fonts from https://fonts.googleapis.com
+      'font-src': ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'],
+    },
+  };
+};
