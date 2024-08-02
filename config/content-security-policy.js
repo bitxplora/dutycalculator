@@ -11,7 +11,7 @@ module.exports = function(environment) {
         'https://10.35.51.193:5000',
       ],
       // Allow scripts, images and media from the same host as the index.html is served ('self')
-      'script-src': ["'self'", "'unsafe-inline'"],
+      'script-src': ["'self'"],
       'img-src': ["'self'"],
       'media-src': ["'self'"],
       // Style sheet should be loaded from same host and from https://fonts.googleapis.com for Google fonts
