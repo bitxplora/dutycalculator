@@ -17,26 +17,25 @@ module.exports = function(environment) {
       // Style sheet should be loaded from same host and from https://fonts.googleapis.com for Google fonts
       'style-src': [
         "'self'",
-        "'inline'",
+        'inline',
         "'unsafe-inline'",
-        'app.css',
+        'dutycalculator.css',
         'https://fonts.googleapis.com',
         'https://fonts.gstatic.com',
         'https://cdn.jsdelivr.net',
-        'http://localhost:4200',
       ],
       'style-src-elem': [
         "'self'",
-        "'inline'",
+        'inline',
         "'unsafe-inline'",
-        'app.css',
+        'dutycalculator.css',
         'https://fonts.googleapis.com',
         'https://fonts.gstatic.com',
         'https://cdn.jsdelivr.net',
-        'http://localhost:4200',
       ],
       // Only allow fonts from https://fonts.googleapis.com
       'font-src': ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'],
     },
+    reportOnly: false,
   };
 };
