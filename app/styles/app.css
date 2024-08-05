@@ -55,8 +55,9 @@ body {
 .update {
   font-family: var(--info);
   color: var(--accent-color);
-  font-size: 0.7rem;
-  font-weight: 350;
+  /* font-size: 0.7rem; */
+  font-size: 70%;
+  font-weight: 480;
 }
 
 .title {

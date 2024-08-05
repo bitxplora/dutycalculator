@@ -65,7 +65,7 @@ export default class Supplied extends Component {
     <style>
       .dutySupplied tr:nth-child(n+1):nth-child(-n+4) > td:nth-child(2) {
         text-align: right;
-        padding-right: 30%;
+        padding-right: 40%;
       }
       .dutySupplied tr:nth-child(n+2):nth-child(-n+4) > td:nth-child(2):nth-child(n+2) {
         background-color: #dbf5ff;
