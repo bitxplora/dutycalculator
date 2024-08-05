@@ -2,8 +2,8 @@ import Service from '@ember/service';
 import valueFromStr from '../helpers/valueFromStr';
 
 export default class DB extends Service {
-  // server = 'https://10.35.51.85:5000';
-  server = 'https://10.35.51.193:5000';
+  // server = 'https://10.35.51.193:5000';
+  server = 'https://api.importduty.ng:5000';
   country = 'ngn'; // The currency code serves as the route for each country.
 
   #searchItem; // The item searched by the user.
