@@ -18,6 +18,7 @@ module.exports = function(environment) {
       'style-src': [
         "'self'",
         'inline',
+        'data:',
         "'unsafe-inline'",
         'dutycalculator.css',
         'vendor.css',
@@ -28,6 +29,7 @@ module.exports = function(environment) {
       'style-src-elem': [
         "'self'",
         'inline',
+        'data:',
         "'unsafe-inline'",
         'dutycalculator.css',
         'vendor.css',
@@ -36,7 +38,13 @@ module.exports = function(environment) {
         'https://cdn.jsdelivr.net',
       ],
       // Only allow fonts from https://fonts.googleapis.com
-      'font-src': ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'],
+      'font-src': [
+        "'self'",
+        'inline',
+        'data:',
+        "'unsafe-inline'",
+        'https://fonts.googleapis.com',
+        'https://fonts.gstatic.com'],
     },
     reportOnly: false,
   };
