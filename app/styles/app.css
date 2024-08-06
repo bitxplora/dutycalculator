@@ -41,7 +41,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 96%;
+  max-width: 90%;
   min-height: 100vh;
   margin: auto;
 }
@@ -56,16 +56,16 @@ body {
   font-family: var(--info);
   color: var(--accent-color);
   /* font-size: 0.7rem; */
-  font-size: 70%;
-  font-weight: 480;
+  font-size: 60%;
+  font-weight: 420;
 }
 
 .title {
   font-family: var(--title);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--title-color);
   /* font-size: 2.8rem; */
-  font-size: 300%;
+  font-size: 200%;
 }
 
 h1{
@@ -79,9 +79,9 @@ h1{
 
 .enquiry {
   /* font-size: 0.65rem; */
-  font-size: 60%;
+  font-size: 50%;
   font-family: Roboto;
-  font-weight: 350;
+  font-weight: 300;
   letter-spacing: 0.08rem;
   color: #05171f;
   margin-bottom: 10%;
@@ -230,7 +230,7 @@ h2.form-header {
 }
 
 .table-result  > tbody tr td:last-of-type {
-  min-width: 80%;
+  min-width: 50%;
 }
 
 .search-result-page {
@@ -269,4 +269,23 @@ h2.form-header {
   font-weight: 450;
 }
 
+@media only screen and (min-width: 600px) {
+  .page-container {
+    max-width: 96%;
+  }
 
+  .update {
+    font-size: 60%;
+    font-weight: 400;
+  }
+
+  .title {
+    font-size: 300%;
+    font-weight: 600;
+  }
+
+  .enquiry {
+    font-size: 60%;
+    font-weight: 350;
+  }
+}
