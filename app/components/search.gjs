@@ -76,7 +76,7 @@ export default class Search extends Component {
       }
       input[type=search] {
         font-family: 'Roboto Mono';
-        font-size: 90%;
+        font-size: 65%;
         font-weight: 900;
         text-align: left;
       }
