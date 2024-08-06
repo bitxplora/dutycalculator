@@ -65,7 +65,8 @@ export default class Supplied extends Component {
     <style>
       .dutySupplied tr:nth-child(n+1):nth-child(-n+4) > td:nth-child(2) {
         text-align: right;
-        padding-right: 40%;
+        padding-right: 32%;
+      }
       }
       .dutySupplied tr:nth-child(n+2):nth-child(-n+4) > td:nth-child(2):nth-child(n+2) {
         background-color: #dbf5ff;
@@ -75,10 +76,10 @@ export default class Supplied extends Component {
         background-color: #cfecf7;
       }
       table.dutySupplied > tr td:last-of-type) {
-        min-width: 300px;
+        min-width: 250px;
       }
       .pure-table .dutySupplied > tr:nth-child(1) > td:nth-child(2) {
-        min-width: 300px;
+        min-width: 250px;
       }
       .dutyComponent {
         display: grid;
