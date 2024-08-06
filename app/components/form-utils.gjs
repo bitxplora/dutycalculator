@@ -79,12 +79,12 @@ export default class Field extends Component {
         font-family: Lato;
       }
       .form-row input {
-        width: 14rem;
+        width: 11rem;
       }
       .pure-form-aligned .pure-control-group label {
         margin: 0;
       }
-      @media only screen and (min-width: 430px) {
+      @media only screen and (min-width: 600px) {
         .form-row input {
           width: 20rem;
         }
