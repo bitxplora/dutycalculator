@@ -8,7 +8,7 @@ module.exports = function(environment) {
       'connect-src': [
         "'self'",
         'https://api.importduty.ng:5000',
-        'https://10.35.51.193:5000',
+        'https://api.dutycalculator.ng:5000',
       ],
       // Allow scripts, images and media from the same host as the index.html is served ('self')
       'script-src': ["'self'"],
@@ -20,8 +20,6 @@ module.exports = function(environment) {
         'inline',
         'data:',
         "'unsafe-inline'",
-        'dutycalculator.css',
-        'vendor.css',
         'https://fonts.googleapis.com',
         'https://fonts.gstatic.com',
         'https://cdn.jsdelivr.net',
@@ -31,8 +29,6 @@ module.exports = function(environment) {
         'inline',
         'data:',
         "'unsafe-inline'",
-        'dutycalculator.css',
-        'vendor.css',
         'https://fonts.googleapis.com',
         'https://fonts.gstatic.com',
         'https://cdn.jsdelivr.net',

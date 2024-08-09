@@ -22,7 +22,7 @@ module.exports = function (defaults) {
     ],
     packagerOptions: {
       webpackConfig: {
-        devtool: 'source-map',
+        devtool: false,
       },
     },
   });
