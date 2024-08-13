@@ -2,8 +2,15 @@
 
 module.exports = function(deployTarget) {
   let ENV = {
-    build: { environment: deployTarget, }
+    build: { environment: deployTarget, },
     // include other plugin configuration that applies to all deploy targets here
+    'revision-data' : {
+      type: 'git-commit',
+    },
+
+    'display-revisions' : {
+      amount: 5,
+    },
   };
 
   if (deployTarget === 'development') {
