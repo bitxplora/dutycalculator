@@ -3,7 +3,7 @@ import tippyTip from '../modifiers/tippyTip.js';
 <template>
   <div class="disclaimer">
       <p role="button" {{
-            tippyTip 'click' 'top'
+            tippyTip 'mouseover' 'top'
             'This web application was created to assist importers and others in estimating duty charges. We are not associated with NCS.'
           }}
         >
