@@ -1,4 +1,4 @@
-/* Ember supports ploain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 
 :root {
   /* Colors */
@@ -15,9 +15,7 @@
 
   /* font-family */
   --title: 'Lilita One', sans-serif;
-  /* --text: 'DM Sans'; */
   --text: Roboto;
-  /* --info: Lato; */
   --info: Roboto;
   --form-subtitle: 'Roboto Mono';
   --form-text: 'Roboto Flex';
@@ -55,7 +53,6 @@ body {
 .update {
   font-family: var(--info);
   color: var(--accent-color);
-  /* font-size: 0.7rem; */
   font-size: 60%;
   font-weight: 420;
 }
@@ -64,7 +61,6 @@ body {
   font-family: var(--title);
   font-weight: 500;
   color: var(--title-color);
-  /* font-size: 2.8rem; */
   font-size: 200%;
 }
 
@@ -78,7 +74,6 @@ h1{
 }
 
 .enquiry {
-  /* font-size: 0.65rem; */
   font-size: 50%;
   font-family: Roboto;
   font-weight: 300;
@@ -93,13 +88,11 @@ h1{
   display: grid;
   place-content: center;
   place-items: center;
-  /* margin-bottom: 0; */
 }
 
 .title-container p {
   width: 80%;
   background-color: #b9e3f3;
-  /* background-color: var(--title-color); */
   letter-spacing: 0.1rem;
   padding: 0.4rem;
   margin: 0.8rem 0;
@@ -109,7 +102,6 @@ h1{
   font-size: 0.8rem;
   font-weight: 450;
   text-align: center;
-  /* color: #ffffff; */
 }
 
 .title-container h1 {
@@ -120,34 +112,6 @@ h1{
   min-width: 100%;
   margin-top: auto;
 }
-
-/* .content-container { */
-/*   display: grid; */
-/*   justify-content: center; */
-/*   justify-items: center; */
-/* } */
-
-/* .disclaimer { */
-/*   display: flex; */
-/*   flex-direction: column; */
-/*   font-family: var(--info); */
-/*   margin-bottom: 1rem; */
-/* } */
-
-/* .disclaimer p { */
-/*   font-size: 1.5rem; */
-/*   color: var(--text-color); */
-/*   margin: 2; */
-/*   /1* margin-top: 0.5rem; *1/ */
-/*   border: 0; */
-/* } */
-
-/* .disclaimer h4 { */
-/*   margin: 0; */
-/*   margin-top: 3rem; */
-/*   margin-bottom: 4; */
-/*   color: var(--accent-color); */
-/* } */
 
 div.container-homepage {
   margin: 0;
@@ -195,13 +159,6 @@ input {
   color: var(--accent-color);
 }
 
-/* h1.form-header { */
-/*   font-size: 0.88rem; */
-/*   color: var(--title-color); */
-/*   font-weight: 900; */
-/*   font-family: var(--form-subtitle); */
-/* } */
-
 h2.form-header {
   font-size: 1.2rem;
   color: var(--title-color);
@@ -211,7 +168,6 @@ h2.form-header {
 
 .brand-text {
   font-family: var(--info);
-  /* color: var(--text-color); */
 }
 
 .table-head {
