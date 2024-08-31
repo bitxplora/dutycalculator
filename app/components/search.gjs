@@ -30,6 +30,12 @@ export default class Search extends Component {
     }
   }
 
+  @action doRefresh() {
+    if (this.error) {
+      this.error = false;
+    }
+  }
+
   @action goSearch() {
     if (!this.query) return false;
     this.search();
@@ -51,6 +57,7 @@ export default class Search extends Component {
         placeholder=" Search for the item or HS code"
         @type="search"
         @value={{this.query}}
+        {{on "input" this.doRefresh}}
         {{on "keyup" this.doSearch}}
         {{tippyTip 'click' 'top'
            "To get started, please enter the item's name (like 'pipe') or use the HS code (for example, '750720000') to search."
