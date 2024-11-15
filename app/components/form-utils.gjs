@@ -1,9 +1,8 @@
 import Component from '@glimmer/component';
-import { concat } from '@ember/helper';
+import { concat, fn } from '@ember/helper';
 import { on } from '@ember/modifier';
 import Currency from './currency';
 import tippyTip from '../modifiers/tippyTip';
-import { fn } from '@ember/helper';
 
 export default class Field extends Component {
   messages = {
