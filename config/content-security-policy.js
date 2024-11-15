@@ -40,7 +40,8 @@ module.exports = function(environment) {
         'data:',
         "'unsafe-inline'",
         'https://fonts.googleapis.com',
-        'https://fonts.gstatic.com'],
+        'https://fonts.gstatic.com',
+      ],
     },
     reportOnly: false,
   };
