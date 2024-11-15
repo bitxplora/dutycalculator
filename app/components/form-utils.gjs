@@ -46,7 +46,7 @@ export default class Field extends Component {
     // parts[0] = parts[0].replace(/^0+(?!\.)/, '');
     parts[0] = parts[0].replace(/^(0{1,})(?=\d)|^(0)(?=\.)/g, '');
     //
-    // Rejoin the integer and decimal, and re-assign to evet.target.value
+    // Rejoin the integer and decimal, and re-assign to event.target.value
     if (parts[1] === undefined) {
       event.target.value = parts[0];
     } else {
