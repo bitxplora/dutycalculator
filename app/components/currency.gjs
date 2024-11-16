@@ -8,10 +8,10 @@ const tooltip = (transactionType) => {
 
 <template>
     <div class="brand-text" >
-      <label for={{( concat @transactionType "Currency") }}></label>
+      <label for={{concat @transactionType "Currency"}}></label>
       <select
-        id={{( concat @transactionType "Currency") }}
-        name={{( concat @transactionType "Currency") }}
+        id={{concat @transactionType "Currency"}}
+        name={{concat @transactionType "Currency"}}
         class="currency-selected" autofocus="" required=""
         {{tippyTip 'mouseenter' 'top' (tooltip @transactionType)}}>
         <option value=''>CUR</option>
