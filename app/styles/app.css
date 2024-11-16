@@ -2,28 +2,27 @@
 
 :root {
   /* Colors */
-  --bg-color: #DBF5FF;
-  --text-box-text-color: #003E57;
-  --text-box-border-color: #003E57;
-  --text-bg-color: #F2FAFD;
+  --bg-color: #dbf5ff;
+  --text-box-text-color: #003e57;
+  --text-box-border-color: #003e57;
+  --text-bg-color: #f2fafd;
   --text-color: #0b3242; /* #00161F;i */
   --title-color: #006994;
-  --button-text-color: #1613AC;
-  --form-bg-color: #F2FAFD;
-  --accent-color: #1613AC;
-
+  --button-text-color: #1613ac;
+  --form-bg-color: #f2fafd;
+  --accent-color: #1613ac;
 
   /* font-family */
-  --title: 'Lilita One', sans-serif;
-  --text: Roboto;
-  --info: Roboto;
-  --form-subtitle: 'Roboto Mono';
-  --form-text: 'Roboto Flex';
+  --title: "Lilita One", sans-serif;
+  --text: roboto;
+  --info: roboto;
+  --form-subtitle: "Roboto Mono";
+  --form-text: "Roboto Flex";
 }
 
 * {
-   box-sizing: border-box;
- }
+  box-sizing: border-box;
+}
 
 html {
   height: 100vh;
@@ -64,7 +63,7 @@ body {
   font-size: 200%;
 }
 
-h1{
+h1 {
   font-family: var(--title);
 }
 
@@ -142,13 +141,13 @@ input {
 }
 
 .edit-button {
-  margin: 1rem 0rem 2rem;
+  margin: 1rem 0 2rem;
 }
 
 .item-selected {
   text-align: center;
   font-family: var(--info);
-  color: var(--title-color)
+  color: var(--title-color);
 }
 
 .form {
@@ -185,7 +184,7 @@ h2.form-header {
   font-family: Lato;
 }
 
-.table-result  > tbody tr td:last-of-type {
+.table-result > tbody tr td:last-of-type {
   min-width: 50%;
 }
 
@@ -211,21 +210,20 @@ h2.form-header {
 .duty-page {
   height: 100%;
   display: grid;
-  align-content: center;
-  justify-content: center;
+  place-content: center center;
   justify-items: center;
   font-size: 0.9rem;
   row-gap: 0.9rem;
 }
 
-.tippy-box[data-theme~='tippyTheme'] {
+.tippy-box[data-theme~="tippyTheme"] {
   background-color: #0b3242;
   font-size: 0.75rem;
-  font-family: 'Roboto Mono';
+  font-family: "Roboto Mono";
   font-weight: 450;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (width >= 600px) {
   .page-container {
     max-width: 96%;
   }
