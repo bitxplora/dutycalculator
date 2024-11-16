@@ -28,6 +28,10 @@ export default class DB extends Service {
     Object.assign(this.#formData, data);
   }
 
+  getItem() {
+    return this.#searchItem;
+  }
+
   getSelected() {
     return this.#selected;
   }
