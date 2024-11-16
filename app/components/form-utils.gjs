@@ -58,7 +58,7 @@ export default class Field extends Component {
     <div class="pure-control-group form-row brand-text" >
       {{#let (fn this.tooltipMessage @transactionType) as |message|}}
         <label
-          for={{( concat @transactionType "Field")}}
+          for={{concat @transactionType "Field"}}
           {{tippyTip 'mouseenter' 'right' message }}
           >
           {{this.capitalize @transactionType}}?
@@ -66,7 +66,7 @@ export default class Field extends Component {
       {{/let}}
       <Currency @currencies={{@model.currencies}} @transactionType={{@transactionType}} />
       <div {{on 'input' this.doFormat}}>
-        <input type="text" id={{( concat @transactionType "Field")}} name={{( concat @transactionType "Field")}} placeholder="Type the value" required />
+        <input type="text" id={{concat @transactionType "Field"}} name={{concat @transactionType "Field"}} placeholder="Type the value" required />
       </div>
     </div>
     <style>
